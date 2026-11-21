@@ -1,0 +1,96 @@
+.objection-decoder { position: relative; isolation: isolate; display: grid; grid-template-columns: minmax(18rem, .72fr) minmax(24rem, .78fr) minmax(22rem, 1.1fr); gap: clamp(1.4rem, 4vw, 4rem); align-items: start; overflow: hidden; padding: clamp(5.5rem, 10vw, 9rem) clamp(1rem, 5vw, 5rem); color: #f7f5ee; background: radial-gradient(circle at 82% 13%, rgba(45, 203, 239, .22), transparent 29rem), radial-gradient(circle at 11% 93%, rgba(224, 31, 78, .24), transparent 30rem), #041624; }
+.objection-decoder::before { content: "05"; position: absolute; z-index: -1; right: -.04em; bottom: -.28em; color: rgba(104, 218, 238, .045); font: 900 clamp(17rem, 40vw, 42rem)/1 sans-serif; letter-spacing: -.12em; pointer-events: none; }
+.objection-decoder::after { content: ""; position: absolute; inset: 0; z-index: -1; opacity: .2; background-image: linear-gradient(rgba(103, 216, 239, .14) 1px, transparent 1px), linear-gradient(90deg, rgba(103, 216, 239, .14) 1px, transparent 1px); background-size: 4rem 4rem; mask-image: linear-gradient(135deg, transparent, #000 28%, #000 72%, transparent); pointer-events: none; }
+.objection-decoder__intro, .objection-decoder__stage, .objection-decoder__list { position: relative; z-index: 1; min-width: 0; }
+.objection-decoder__intro>span { display: inline-flex; align-items: center; gap: .55rem; color: #66dff0; font: 800 .64rem/1.2 var(--font-label, monospace); letter-spacing: .18em; }
+.objection-decoder__intro h2 { margin: 1.2rem 0 1.45rem; font: 400 clamp(3.2rem, 6.2vw, 6.6rem)/.86 var(--font-display, Georgia, serif); letter-spacing: -.06em; }
+.objection-decoder__intro h2 em { color: #f04c70; font-style: italic; }
+.objection-decoder__intro>p { max-width: 25rem; margin: 0; color: #a7bdc7; font-size: 1rem; line-height: 1.72; }
+.objection-decoder__intro>a, .objection-decoder__stage>a { display: inline-flex; align-items: center; gap: .55rem; margin-top: 2rem; color: #f2c85e; font-size: .76rem; font-weight: 900; text-decoration: none; }
+.objection-decoder__intro>a:hover, .objection-decoder__stage>a:hover { color: #fff; }
+.objection-decoder__stage { min-height: 34rem; padding: 1.35rem; overflow: hidden; border: 1px solid rgba(123, 219, 237, .28); border-radius: 1.7rem; background: radial-gradient(circle at 70% 22%, rgba(74, 218, 239, .17), transparent 50%), linear-gradient(145deg, rgba(17, 61, 78, .74), rgba(3, 19, 31, .86)); box-shadow: 0 2rem 4.7rem rgba(0, 0, 0, .28), inset 0 1px rgba(255, 255, 255, .12); animation: objection-stage-in .6s var(--ease-premium, cubic-bezier(.16, 1, .3, 1)); }
+.objection-decoder__stage::before { content: ""; position: absolute; inset: 0; opacity: .25; background-image: linear-gradient(rgba(134, 224, 240, .14) 1px, transparent 1px), linear-gradient(90deg, rgba(134, 224, 240, .14) 1px, transparent 1px); background-size: 2.9rem 2.9rem; mask-image: radial-gradient(circle at 55% 30%, #000, transparent 76%); pointer-events: none; }
+.objection-decoder__stage>* { position: relative; z-index: 1; }
+.objection-decoder__stage-top { display: flex; align-items: center; justify-content: space-between; gap: .8rem; color: #7fabb6; font: 800 .51rem/1 var(--font-label, monospace); letter-spacing: .14em; }
+.objection-decoder__stage-top span { display: inline-flex; align-items: center; gap: .45rem; color: #66e5ad; }
+.objection-decoder__stage-top i { width: .42rem; height: .42rem; border-radius: 50%; background: #66e5ad; box-shadow: 0 0 .8rem #66e5ad; }
+.objection-decoder__stage-top b { color: #dbedf0; font-size: .47rem; }
+.objection-decoder__stage-mark { width: 8rem; margin: 2.3rem 0 1.8rem; color: #071e2d; font: 400 8.5rem/.68 var(--font-display, Georgia, serif); letter-spacing: -.1em; text-shadow: .08em .05em 0 #f1c95e; }
+.objection-decoder__stage-label { color: #5fe0ef; font: 800 .53rem/1 var(--font-label, monospace); letter-spacing: .16em; }
+.objection-decoder__stage h3 { max-width: 17rem; margin: .95rem 0 1rem; color: #fff; font: 400 clamp(2rem, 3vw, 3.4rem)/.91 var(--font-display, Georgia, serif); letter-spacing: -.055em; }
+.objection-decoder__stage p { max-width: 19rem; margin: 0; color: #b4cbd1; font-size: .84rem; line-height: 1.65; }
+.objection-decoder__stage>a { margin-top: 1.45rem; }
+.objection-decoder__list { border-top: 1px solid rgba(146, 214, 228, .18); }
+.objection-decoder__list article { border-bottom: 1px solid rgba(146, 214, 228, .18); }
+.objection-decoder__list h3 { margin: 0; }
+.objection-decoder__list h3 button { position: relative; display: grid; grid-template-columns: 2.2rem 1fr auto; align-items: center; gap: .8rem; width: 100%; min-height: 5.6rem; padding: 1rem .25rem; border: 0; color: #dcebef; background: transparent; text-align: left; cursor: pointer; transition: color .35s ease, padding .45s var(--ease-premium, cubic-bezier(.16, 1, .3, 1)), background .35s ease; }
+.objection-decoder__list h3 button::before { content: ""; position: absolute; top: 0; bottom: 0; left: -.85rem; width: 3px; background: #f04d70; transform: scaleY(0); transform-origin: center; transition: transform .4s ease; }
+.objection-decoder__list h3 button>span { color: #68dff0; font: 900 .59rem/1 var(--font-label, monospace); }
+.objection-decoder__list h3 button>svg { color: #7fa7b2; transition: transform .4s var(--ease-premium, cubic-bezier(.16, 1, .3, 1)), color .35s ease; }
+.objection-decoder__list article.is-open h3 button, .objection-decoder__list h3 button:hover, .objection-decoder__list h3 button:focus-visible { color: #fff; background: rgba(80, 215, 237, .07); }
+.objection-decoder__list article.is-open h3 button { padding-left: .55rem; }
+.objection-decoder__list article.is-open h3 button::before { transform: scaleY(1); }
+.objection-decoder__list article.is-open h3 button>svg { color: #f1c95e; transform: rotate(180deg); }
+.objection-decoder__list h3 button:focus-visible { outline: 2px solid #5fe0ef; outline-offset: -2px; }
+.objection-decoder__answer { padding: 0 .25rem 1.35rem 3rem; animation: objection-answer-in .35s ease both; }
+.objection-decoder__answer p { margin: 0; color: #a7c0c9; font-size: .84rem; line-height: 1.7; }
+.objection-decoder__answer a { display: inline-flex; align-items: center; gap: .45rem; margin-top: 1rem; color: #f1c95e; font-size: .7rem; font-weight: 900; text-decoration: none; }
+@keyframes objection-stage-in { from { opacity: .3; transform: translateY(14px) rotate(1deg); } to { opacity: 1; transform: none; } }
+@keyframes objection-answer-in { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: none; } }
+@media (max-width: 1050px) { .objection-decoder { grid-template-columns: minmax(17rem, .7fr) minmax(22rem, .9fr); } .objection-decoder__list { grid-column: 1 / -1; } }
+@media (max-width: 700px) { .objection-decoder { display: flex; flex-direction: column; gap: 2rem; padding-inline: .85rem; } .objection-decoder__intro { padding-inline: .4rem; } .objection-decoder__intro h2 { font-size: clamp(3.1rem, 14vw, 4.7rem); } .objection-decoder__stage { width: 100%; min-height: 30rem; } .objection-decoder__list { width: 100%; } .objection-decoder__list h3 button { grid-template-columns: 1.9rem 1fr auto; min-height: 5.1rem; gap: .55rem; } .objection-decoder__answer { padding-left: 2.45rem; } }
+@media (prefers-reduced-motion: reduce) { .objection-decoder__stage, .objection-decoder__answer, .objection-decoder__list h3 button, .objection-decoder__list h3 button::before, .objection-decoder__list h3 button>svg { animation: none; transition: none; } }
+
+.objection-decoder__stage {
+  isolation: isolate;
+}
+
+.objection-decoder__stage-mark,
+.objection-decoder__stage-label,
+.objection-decoder__stage h3,
+.objection-decoder__stage p,
+.objection-decoder__stage a {
+  text-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+}
+
+/* React Bits SpotlightCard gives the answer surface a real pointer-reactive
+   field, while the surrounding stage stays semantic and readable. */
+.objection-decoder__stage {
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.objection-decoder__answer-surface.card-spotlight {
+  min-height: 34rem;
+  padding: 1.35rem;
+  overflow: hidden;
+  border: 1px solid rgba(123, 219, 237, .28);
+  border-radius: 1.7rem;
+  background: radial-gradient(circle at 70% 22%, rgba(74, 218, 239, .17), transparent 50%), linear-gradient(145deg, rgba(17, 61, 78, .74), rgba(3, 19, 31, .86));
+  box-shadow: 0 2rem 4.7rem rgba(0, 0, 0, .28), inset 0 1px rgba(255, 255, 255, .12);
+  animation: objection-stage-in .6s var(--ease-premium, cubic-bezier(.16, 1, .3, 1));
+}
+
+.objection-decoder__answer-surface::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  opacity: .25;
+  background-image: linear-gradient(rgba(134, 224, 240, .14) 1px, transparent 1px), linear-gradient(90deg, rgba(134, 224, 240, .14) 1px, transparent 1px);
+  background-size: 2.9rem 2.9rem;
+  mask-image: radial-gradient(circle at 55% 30%, #000, transparent 76%);
+  pointer-events: none;
+}
+
+.objection-decoder__answer-surface > * { position: relative; z-index: 1; }
+
+@media (max-width: 700px) {
+  .objection-decoder__answer-surface.card-spotlight { min-height: 30rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .objection-decoder__answer-surface.card-spotlight { animation: none; }
+}

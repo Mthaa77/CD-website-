@@ -1,0 +1,15 @@
+/* Contained visual proof cards keep the service router tactile without turning imagery into a page background. */
+.service-foundry__visual{position:relative;isolation:isolate;min-width:0;min-height:22rem;aspect-ratio:1.04;overflow:hidden;margin:0;border:1px solid color-mix(in srgb,var(--sf-accent) 45%,rgba(255,255,255,.2));border-radius:1.65rem;background:#0a2537;box-shadow:0 1.8rem 3.5rem rgba(0,0,0,.24),inset 0 1px rgba(255,255,255,.18);transform:translateZ(0)}
+.service-foundry__visual::before{content:"";position:absolute;z-index:1;inset:0;background:linear-gradient(145deg,rgba(5,22,34,.04),rgba(5,22,34,.12) 45%,rgba(3,16,26,.68)),linear-gradient(90deg,transparent 48%,rgba(255,255,255,.11) 50%,transparent 52%);pointer-events:none}
+.service-foundry__visual-image{z-index:0;object-fit:cover;object-position:center;transition:transform .7s cubic-bezier(.16,1,.3,1),filter .7s ease}
+.service-foundry__visual:hover .service-foundry__visual-image{transform:scale(1.045);filter:saturate(1.08)}
+.service-foundry__visual-sheen{position:absolute;z-index:2;inset:0;background:linear-gradient(115deg,transparent 24%,rgba(255,255,255,.18) 50%,transparent 72%);transform:translateX(-125%);transition:transform .85s cubic-bezier(.16,1,.3,1);pointer-events:none}
+.service-foundry__visual:hover .service-foundry__visual-sheen{transform:translateX(125%)}
+.service-foundry__visual-badge{position:absolute;z-index:3;top:1rem;right:1rem;display:flex;align-items:center;gap:.45rem;padding:.48rem .62rem;border:1px solid color-mix(in srgb,var(--sf-accent) 55%,white);border-radius:999px;color:var(--sf-accent);background:rgba(4,21,33,.7);box-shadow:0 .7rem 1.6rem rgba(0,0,0,.22);font:800 .58rem var(--font-mono,monospace);letter-spacing:.12em}
+.service-foundry__visual-badge svg{filter:drop-shadow(0 0 .55rem color-mix(in srgb,var(--sf-accent) 65%,transparent))}
+.service-foundry__visual figcaption{position:absolute;z-index:3;right:1rem;bottom:1rem;left:1rem;display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;padding:1.15rem 1rem .85rem;border-top:1px solid rgba(255,255,255,.2);color:#fff;background:linear-gradient(180deg,transparent,rgba(2,13,23,.82));font:800 .56rem var(--font-mono,monospace);letter-spacing:.13em}
+.service-foundry__visual figcaption span{color:var(--sf-accent)}
+.service-foundry__visual figcaption strong{color:#c8d9df;font-weight:700;text-align:right}
+@media(max-width:900px){.service-foundry__visual{width:min(100%,34rem);min-height:18rem;aspect-ratio:1.35;margin-inline:auto}}
+@media(max-width:560px){.service-foundry__visual{min-height:16rem;border-radius:1.2rem}.service-foundry__visual figcaption{right:.75rem;bottom:.75rem;left:.75rem;align-items:flex-start;flex-direction:column;gap:.35rem;padding:1.1rem .75rem .5rem}.service-foundry__visual figcaption strong{text-align:left}.service-foundry__visual-badge{top:.75rem;right:.75rem}}
+@media(prefers-reduced-motion:reduce){.service-foundry__visual-image,.service-foundry__visual-sheen{transition:none}.service-foundry__visual:hover .service-foundry__visual-image{transform:none}.service-foundry__visual:hover .service-foundry__visual-sheen{transform:none}}

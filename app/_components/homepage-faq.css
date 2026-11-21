@@ -1,0 +1,202 @@
+.homepage-faq {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+  gap: clamp(2.5rem, 8vw, 9rem);
+  overflow: hidden;
+  padding: clamp(5.5rem, 10vw, 9.5rem) clamp(1rem, 6vw, 7rem);
+  color: #071c2b;
+  background:
+    radial-gradient(circle at 100% 0%, rgb(53 201 255 / 0.2), transparent 27%),
+    radial-gradient(circle at 0% 100%, rgb(215 25 63 / 0.1), transparent 30%),
+    #f3f6f5;
+}
+
+.homepage-faq::before {
+  content: "?";
+  position: absolute;
+  right: -0.04em;
+  bottom: -0.35em;
+  color: rgb(7 28 43 / 0.045);
+  font: 900 clamp(24rem, 52vw, 54rem) / 0.8 sans-serif;
+  letter-spacing: -0.18em;
+  pointer-events: none;
+}
+
+.homepage-faq__intro,
+.homepage-faq__list {
+  position: relative;
+  z-index: 1;
+}
+
+.homepage-faq__intro {
+  align-self: start;
+  max-width: 32rem;
+}
+
+.homepage-faq__kicker {
+  color: #d7193f;
+  font: 850 0.7rem / 1.2 var(--font-geist-mono, monospace);
+  letter-spacing: 0.18em;
+}
+
+.homepage-faq h2 {
+  margin: 1rem 0 1.7rem;
+  font: 750 clamp(3.5rem, 6.5vw, 6.8rem) / 0.88 var(--font-display, Georgia, serif);
+  letter-spacing: -0.055em;
+}
+
+.homepage-faq h2 em {
+  color: #0878bf;
+  font-style: normal;
+}
+
+.homepage-faq__intro p {
+  max-width: 28rem;
+  margin: 0 0 2.2rem;
+  color: #536673;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.homepage-faq__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem;
+  min-height: 3.1rem;
+  padding: 0 1.15rem;
+  border-radius: 999px;
+  color: #ffffff;
+  background: #071c2b;
+  box-shadow: 0 1rem 2rem rgb(7 28 43 / 0.18);
+  font-size: 0.8rem;
+  font-weight: 850;
+  text-decoration: none;
+  transition: transform 0.45s var(--ease-premium), box-shadow 0.45s var(--ease-premium);
+}
+
+.homepage-faq__link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1.3rem 2.5rem rgb(7 28 43 / 0.24);
+}
+
+.homepage-faq__list {
+  overflow: hidden;
+  border: 1px solid rgb(7 28 43 / 0.15);
+  border-radius: 1.8rem;
+  background: rgb(255 255 255 / 0.72);
+  box-shadow: 0 2rem 4rem rgb(7 28 43 / 0.1);
+}
+
+.homepage-faq details {
+  border-bottom: 1px solid rgb(7 28 43 / 0.13);
+}
+
+.homepage-faq details:last-child {
+  border-bottom: 0;
+}
+
+.homepage-faq summary {
+  display: grid;
+  grid-template-columns: 2.6rem 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  min-height: 5.8rem;
+  padding: 1rem 1.4rem;
+  color: #071c2b;
+  cursor: pointer;
+  list-style: none;
+  transition: background 0.45s var(--ease-premium), color 0.45s var(--ease-premium);
+}
+
+.homepage-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.homepage-faq summary:hover,
+.homepage-faq details[open] summary {
+  color: #075d96;
+  background: linear-gradient(90deg, rgb(53 201 255 / 0.12), rgb(255 255 255 / 0.28));
+}
+
+.homepage-faq summary > span {
+  color: #d7193f;
+  font: 850 0.68rem / 1 var(--font-geist-mono, monospace);
+  letter-spacing: 0.08em;
+}
+
+.homepage-faq summary strong {
+  font-size: clamp(1rem, 1.55vw, 1.2rem);
+  letter-spacing: -0.025em;
+}
+
+.homepage-faq summary svg {
+  color: #0878bf;
+  transition: transform 0.45s var(--ease-premium);
+}
+
+.homepage-faq details[open] summary svg {
+  transform: rotate(180deg);
+}
+
+.homepage-faq__answer {
+  padding: 0 4.9rem 1.4rem;
+}
+
+.homepage-faq__answer p {
+  max-width: 45rem;
+  margin: 0;
+  color: #536673;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .homepage-faq {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .homepage-faq__intro {
+    max-width: 44rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .homepage-faq {
+    padding-inline: 1rem;
+  }
+
+  .homepage-faq h2 {
+    font-size: clamp(3.5rem, 14vw, 4.4rem);
+  }
+
+  .homepage-faq__list {
+    border-radius: 1.25rem;
+  }
+
+  .homepage-faq summary {
+    grid-template-columns: 2rem 1fr auto;
+    gap: 0.7rem;
+    min-height: 5.4rem;
+    padding-inline: 1rem;
+  }
+
+  .homepage-faq summary strong {
+    font-size: 0.94rem;
+    line-height: 1.25;
+  }
+
+  .homepage-faq__answer {
+    padding: 0 1rem 1.35rem 3.7rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .homepage-faq summary,
+  .homepage-faq summary svg,
+  .homepage-faq__link {
+    transition: none;
+  }
+}

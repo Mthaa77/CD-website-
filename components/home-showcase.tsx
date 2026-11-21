@@ -1,0 +1,45 @@
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
+import { ArrowUpRight, ArrowRight, Check, ChevronDown, Scale, GraduationCap, HeartPulse, Building2, Store, Landmark, Globe2, ShoppingBag, Workflow } from "lucide-react";
+import { faqs, industries, packages, priceNote, proof } from "../lib/data";
+import { CountUp } from "./carter-motion";
+import "./home-showcase.css";
+
+const industryIcons = [Scale, GraduationCap, HeartPulse, Building2, Store, Landmark];
+const industryDetails = ["Clear practice areas. Confident consultations.", "A clearer journey from discovery to enrolment.", "A reassuring first step for every patient.", "Your capabilities, presented with confidence.", "A stronger presence for the business behind the work.", "Useful information designed around the people it serves."];
+
+export function IndustryShowcase() {
+  const [active, setActive] = useState(0);
+  const [name, copy, url] = industries[active];
+  const Icon = industryIcons[active];
+  return <section className="hx-industries hx-section" id="sectors" aria-labelledby="hx-industries-title">
+    <div className="hx-heading"><div><p className="hx-kicker">INDUSTRIES / BUILT FOR REAL PEOPLE</p><h2 id="hx-industries-title">Different people.<br/><em>Different decisions.</em></h2></div><p>Choose your industry and explore a digital experience shaped around the people you serve.</p></div>
+    <div className="hx-industry-layout"><div className="hx-industry-options" role="group" aria-label="Choose your industry">{industries.map(([label], index) => { const ItemIcon = industryIcons[index]; return <button key={label} type="button" aria-pressed={active === index} onClick={() => setActive(index)}><span className="hx-industry-icon"><ItemIcon size={21}/></span><strong>{label}</strong><ArrowUpRight size={17} aria-hidden="true"/></button> })}</div>
+      <div className="hx-industry-stage" aria-live="polite" key={name}><svg className="hx-industry-art" viewBox="0 0 620 410" aria-hidden="true"><defs><linearGradient id="hx-industry-light" x2="1" y2="1"><stop stopColor="#ffbd8b"/><stop offset=".45" stopColor="#f1697c"/><stop offset="1" stopColor="#78b9ff"/></linearGradient><radialGradient id="hx-industry-glow"><stop stopColor="#91c1ff" stopOpacity=".65"/><stop offset="1" stopColor="#91c1ff" stopOpacity="0"/></radialGradient></defs><circle cx="340" cy="190" r="190" fill="url(#hx-industry-glow)"/><circle className="hx-rotate" cx="340" cy="190" r="133" fill="none" stroke="url(#hx-industry-light)" strokeWidth="1.5" strokeDasharray="7 12"/><circle className="hx-rotate-reverse" cx="340" cy="190" r="97" fill="none" stroke="#9bc9ff" strokeWidth="1" strokeDasharray="2 9"/><path className="hx-draw" d="M110 320 C180 265 220 270 265 203 S390 110 500 115" fill="none" stroke="url(#hx-industry-light)" strokeWidth="3" pathLength="1"/><circle className="hx-pulse" cx="500" cy="115" r="8" fill="#ffac83"/><circle cx="340" cy="190" r="62" fill="#ffffff17" stroke="#ffffff60"/><circle cx="340" cy="190" r="49" fill="#ffffff10"/></svg><div className="hx-industry-stage__content"><span className="hx-industry-stage__icon"><Icon size={32}/></span><span className="hx-stage-label">DESIGNED FOR YOUR WORLD</span><h3>{name}</h3><p>{industryDetails[active]}</p><p className="hx-industry-detail">{copy}</p><Link href={url}>Explore this direction <ArrowUpRight size={16}/></Link></div></div>
+    </div><nav className="hx-sector-links" aria-label="Explore sector pages"><span>Explore sector pages</span>{industries.slice(0,4).map(([label,,href])=><Link key={href} href={href}>{label} <ArrowUpRight size={14}/></Link>)}</nav></section>;
+}
+
+const serviceIcons = [Globe2, ShoppingBag, Workflow];
+const servicePaths = ["/websites", "/stores", "/apps"];
+const serviceLabels = ["Websites", "Online stores", "Web applications"];
+const serviceCopy = ["Build a digital presence that earns confidence and makes enquiries easy.", "Give customers a thoughtful journey from discovery to checkout.", "Turn important tasks into clearer, more connected digital workflows."];
+export function ServiceShowcase() {
+  return <section className="hx-services hx-section"><div className="hx-heading"><div><p className="hx-kicker">THE RIGHT DIGITAL FOUNDATION</p><h2>Three ways to <em>move forward.</em></h2></div><p>Start with the outcome your business needs. We’ll shape the scope together.</p></div><div className="hx-service-list">{serviceLabels.map((label,index) => {const Icon=serviceIcons[index]; const price=packages[["websites","stores","apps"][index] as "websites"|"stores"|"apps"][0].price; return <Link href={servicePaths[index]} className="hx-service-row" key={label}><span className="hx-service-icon"><Icon size={27}/></span><span className="hx-service-copy"><strong>{label}</strong><small>{serviceCopy[index]}</small></span><span className="hx-service-price">From {price}</span><span className="hx-arrow"><ArrowUpRight size={20}/></span></Link>})}</div><p className="hx-fineprint">{priceNote}</p></section>;
+}
+
+export function DeliveryShowcase() {
+  const [active,setActive]=useState(0);
+  const project=proof[active];
+  return <section className="hx-proof hx-section" id="selected-work" aria-labelledby="hx-proof-title"><span id="projects"/><span id="project-cases"/><div className="hx-heading"><div><p className="hx-kicker">SELECTED DELIVERY</p><h2 id="hx-proof-title">Good work.<br/><em>Clearly delivered.</em></h2></div><p>Explore the scope delivered for organisations in law and education.</p></div><div className="hx-proof-layout"><div className="hx-proof-stage"><svg className="hx-proof-svg" viewBox="0 0 640 430" aria-hidden="true"><defs><linearGradient id="hx-proof-gradient" x2="1" y2="1"><stop stopColor="#f098a0"/><stop offset=".5" stopColor="#ecc67e"/><stop offset="1" stopColor="#65b7ff"/></linearGradient></defs><circle cx="315" cy="215" r="150" fill="none" stroke="#ffffff30" strokeDasharray="5 10"/><circle className="hx-rotate" cx="315" cy="215" r="115" fill="none" stroke="url(#hx-proof-gradient)" strokeDasharray="3 10"/><rect x="151" y="100" width="340" height="225" rx="23" fill="#f4f8ff" stroke="#ffffffa0"/><rect x="151" y="100" width="340" height="34" rx="23" fill="#152845"/><rect x="151" y="118" width="340" height="16" fill="#152845"/><circle cx="174" cy="117" r="4" fill="#ef7885"/><circle cx="189" cy="117" r="4" fill="#e7ca8a"/><circle cx="204" cy="117" r="4" fill="#a5d5c7"/><rect x="173" y="156" width="140" height="10" rx="5" fill="#c2d0e3"/><rect x="173" y="179" width="165" height="19" rx="9" fill="#1b3152"/><rect x="173" y="206" width="132" height="19" rx="9" fill="#1b3152"/><rect x="173" y="242" width="114" height="6" rx="3" fill="#c2d0e3"/><rect x="173" y="256" width="95" height="6" rx="3" fill="#c2d0e3"/><rect x="173" y="281" width="84" height="22" rx="11" fill="#cf415a"/><rect x="357" y="157" width="113" height="145" rx="14" fill="#d4e3f5"/><circle cx="414" cy="215" r="35" fill="#a7c5e7"/></svg><span>ILLUSTRATIVE PRESENTATION</span></div><div className="hx-proof-details" aria-live="polite"><span className="hx-kicker">{project.sector} / PROJECT SCOPE</span><h3>{project.name}</h3><p>{project.summary}</p><div className="hx-proof-points"><span><Check size={16}/> Delivered scope</span></div><Link href="/work">View project details <ArrowUpRight size={16}/></Link><small>Project screenshots and live links to be added when available.</small></div></div><div className="hx-proof-selector" role="group" aria-label="Choose a project">{proof.map((item,index)=><button type="button" aria-pressed={active===index} key={item.name} onClick={()=>setActive(index)}><span>{item.sector}</span><strong>{item.name}</strong><ArrowRight size={18}/></button>)}</div></section>;
+}
+
+export function TrustMetrics() {
+ const metrics=[[packages.websites[0].price,"Website starting price"],["135%","B-BBEE procurement recognition"],["5–7 days","Launch-track target in business days"],["14 days","Launch and Business defect-fix window"]];
+ return <section className="hx-metrics hx-section" aria-label="Carter Digitals in figures"><div className="hx-metrics__intro"><p className="hx-kicker">THE DETAILS THAT MATTER</p><h2>A clear starting point.<br/><em>A considered delivery.</em></h2></div><div className="hx-metrics__grid">{metrics.map(([value,label])=><div key={label}><span className="hx-metrics__orb" aria-hidden="true"/><strong>{value.includes("–") ? value : <CountUp value={value}/>}</strong><p>{label}</p></div>)}</div><p className="hx-fineprint">{priceNote}</p></section>;
+}
+
+export function PremiumFaq() {
+ return <section className="hx-faq hx-section" id="faq"><div className="hx-faq__intro"><p className="hx-kicker">THE PRACTICAL DETAILS</p><h2>Good questions.<br/><em>Clear answers.</em></h2><p>Everything starts with a conversation. Here are a few things worth knowing before we begin.</p><Link href="/contact#enquiry">Ask Kabelo a question <ArrowUpRight size={16}/></Link></div><div className="hx-faq__list">{faqs.map(([question,answer])=><details key={question}><summary><span>{question}</span><span className="hx-faq__toggle"><ChevronDown size={18}/></span></summary><p>{answer}</p></details>)}</div></section>;
+}

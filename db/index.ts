@@ -1,0 +1,24 @@
+import { drizzle } from "drizzle-orm/d1";
+import * as schema from "./schema";
+
+type RuntimeBindings = {
+  DB?: D1Database;
+};
+
+export function getDatabaseBinding() {
+  return (globalThis as typeof globalThis & { __CARTER_RUNTIME_ENV__?: RuntimeBindings })
+    .__CARTER_RUNTIME_ENV__?.DB;
+}
+
+export function getDb(database?: D1Database) {
+  const runtimeDatabase =
+    database ?? getDatabaseBinding();
+
+  if (!runtimeDatabase) {
+    throw new Error(
+      "Cloudflare D1 binding `DB` is unavailable. Set the `d1` field in .openai/hosting.json to `DB` or let your control plane inject the real binding values before using the database."
+    );
+  }
+
+  return drizzle(runtimeDatabase, { schema });
+}

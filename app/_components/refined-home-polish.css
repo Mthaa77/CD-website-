@@ -1,0 +1,95 @@
+#top.refined-home {
+  --finish-night: #111723;
+  --finish-night-deep: #0c111b;
+  --finish-paper: #f5f6fb;
+  --finish-paper-warm: #faf7f1;
+  --finish-ink: #18243b;
+  --finish-muted: #485875;
+  --finish-blue: #2956b9;
+  --finish-gold: #efcb88;
+  --finish-radius: clamp(1.2rem,2.6vw,2.15rem);
+  --finish-shadow: 0 1px 3px #13264a10,0 18px 44px #21386715;
+  font-family: var(--carter-body);
+  background: var(--finish-night-deep);
+}
+
+body #top.refined-home .studio-nav {
+  top: max(.7rem,env(safe-area-inset-top));
+  width: min(1380px,calc(100% - 2rem));
+  border-radius: 1.3rem;
+  border: 1px solid #d5e2ff33;
+  color: #f5f7ff;
+  background: #101827ed;
+  box-shadow: 0 12px 36px #06102066;
+}
+#top.refined-home .studio-nav :is(.studio-nav__brand,.studio-nav__links a,.studio-nav__toggle) { color: #f5f7ff; }
+#top.refined-home .studio-nav__brand strong { color: #c7d5f2; }
+#top.refined-home :is(.studio-nav__cta,.showcase-actions .studio-button) {
+  background: linear-gradient(120deg,#ffacb1,#f28092);
+  color: #351b29;
+  box-shadow: 0 10px 23px #0003;
+}
+#top.refined-home .studio-nav__brand img { border-radius: .55rem; }
+#top.refined-home .carter-showcase { background-color: var(--finish-night-deep); }
+#top.refined-home .carter-showcase h1 {
+  font-family: var(--carter-body) !important;
+  font-weight: 700 !important;
+  letter-spacing: -.069em !important;
+}
+#top.refined-home .carter-showcase h1 em {
+  font-family: var(--carter-heading) !important;
+  font-style: italic !important;
+  font-weight: 520 !important;
+  color: var(--finish-gold);
+  letter-spacing: -.051em !important;
+}
+#top.refined-home :is(.refined-section,.direction-studio,.phase-section,.enquiry-studio,.service-foundry) :is(h2,h3) {
+  font-family: var(--carter-body) !important;
+  font-weight: 690 !important;
+  letter-spacing: -.045em !important;
+  text-shadow: none;
+}
+#top.refined-home :is(.refined-section,.direction-studio,.phase-section,.enquiry-studio,.service-foundry) h2 em {
+  font-family: var(--carter-heading) !important;
+  font-style: italic !important;
+  font-weight: 510 !important;
+  color: inherit;
+}
+#top.refined-home :is(.carter-showcase,.refined-section,.direction-studio,.phase-section,.enquiry-studio,.service-foundry) p {
+  font-family: var(--carter-body);
+  text-shadow: none;
+}
+#top.refined-home :is(.restored-sector-links,.restored-benefit,.restored-journey,.service-foundry,.refined-work,.refined-packages,.search-foundation,.buyer-questions) {
+  color: var(--finish-ink);
+  background: linear-gradient(135deg,var(--finish-paper),var(--finish-paper-warm));
+}
+#top.refined-home :is(.restored-sector-links,.restored-benefit,.restored-journey,.service-foundry,.refined-work,.refined-packages,.search-foundation,.buyer-questions) :is(h2,h2 em) { color: var(--finish-ink); }
+#top.refined-home :is(.restored-benefit,.restored-journey) p { color: var(--finish-muted); }
+#top.refined-home .restored-benefit:has(.restored-enquiry-svg) {
+  background: radial-gradient(ellipse at 83% 27%,#edf4fe 0%,transparent 69%),var(--finish-paper-warm);
+}
+#top.refined-home :is(.refined-welcome,.project-process,.enquiry-studio) {
+  background: radial-gradient(ellipse at 83% 4%,#253247 0%,transparent 63%),var(--finish-night);
+  color: #f5f6fb;
+}
+#top.refined-home :is(.project-process,.enquiry-studio,.refined-welcome) :is(h2 em,h1 em) { color: var(--finish-gold); }
+#top.refined-home :is(.restored-benefit figure,.refined-work-visual,.service-foundry__shell,.direction-model,.refined-package-grid article) {
+  border-radius: var(--finish-radius);
+  box-shadow: var(--finish-shadow);
+}
+#top.refined-home .restored-journey svg {
+  border-radius: var(--finish-radius);
+  background: linear-gradient(95deg,#e9effd,#fff);
+}
+#top.refined-home .restored-sector-links .cd-options a {
+  border-radius: 999px;
+  border-color: #b7c7e8;
+  background: #fff;
+  color: #203762;
+  box-shadow: 0 4px 12px #2947790c;
+}
+#top.refined-home .restored-sector-links .cd-options a:hover { background: #244aa4; color: white; }
+@media (max-width: 520px) {
+  body #top.refined-home .studio-nav { width: calc(100% - 1.2rem); padding-inline: .65rem; }
+  #top.refined-home .carter-showcase h1 { font-size: clamp(2.5rem,10.3vw,3.6rem); }
+}

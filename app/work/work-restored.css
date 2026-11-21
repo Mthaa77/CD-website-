@@ -1,0 +1,5 @@
+.cd-site .restored-work-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr)); }
+.cd-site .restored-work-card { overflow: hidden; padding: 0; }
+.restored-work-card > img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; background: #ece8e5; }
+.restored-work-card > div { padding: clamp(1rem, 2.8vw, 1.75rem); }
+.cd-site .restored-work-card h3 { font: 500 1.85rem/1.05 var(--carter-heading); letter-spacing: -.03em; }

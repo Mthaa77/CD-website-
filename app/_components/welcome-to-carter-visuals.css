@@ -1,0 +1,9 @@
+.welcome-carter__brief-visual{position:relative;isolation:isolate;min-height:9.4rem;margin:1.7rem 0 0;overflow:hidden;border:1px solid rgba(115,215,237,.28);border-radius:1.05rem;background:#081f32;box-shadow:0 1.2rem 2.8rem rgba(0,0,0,.22),inset 0 1px rgba(255,255,255,.14)}
+.welcome-carter__brief-visual::after{content:"";position:absolute;z-index:1;inset:0;background:linear-gradient(180deg,transparent 34%,rgba(3,15,25,.82));pointer-events:none}
+.welcome-carter__brief-visual img{object-fit:cover;object-position:center;transition:transform .65s cubic-bezier(.16,1,.3,1)}
+.welcome-carter__brief-visual:hover img{transform:scale(1.045)}
+.welcome-carter__brief-visual figcaption{position:absolute;z-index:2;right:.7rem;bottom:.65rem;left:.7rem;display:flex;align-items:flex-end;justify-content:space-between;gap:.8rem;padding-top:.8rem;border-top:1px solid rgba(255,255,255,.2)}
+.welcome-carter__brief-visual figcaption span{color:var(--wc-cyan);font:800 .49rem var(--font-label,monospace);letter-spacing:.13em}
+.welcome-carter__brief-visual figcaption strong{color:#f5f1e7;font:400 .95rem var(--font-display,Georgia,serif);letter-spacing:-.02em}
+@media(max-width:620px){.welcome-carter__brief-visual{min-height:8.6rem;margin-top:1.45rem}.welcome-carter__brief-visual figcaption{align-items:flex-start;flex-direction:column;gap:.25rem}}
+@media(prefers-reduced-motion:reduce){.welcome-carter__brief-visual img{transition:none}.welcome-carter__brief-visual:hover img{transform:none}}

@@ -1,0 +1,35 @@
+{
+  "baseline_commit": "279c67b063d1730a2f372eeff99e99c51c1a17cf",
+  "saved_version": 221,
+  "routes": [
+    "/",
+    "/about",
+    "/company-profile",
+    "/contact",
+    "/insights",
+    "/insights/[slug]",
+    "/offerings/[slug]",
+    "/pricing",
+    "/privacy",
+    "/seo-geo-pretoria",
+    "/services",
+    "/terms",
+    "/web-application-development-pretoria",
+    "/website-development-centurion",
+    "/website-development-johannesburg",
+    "/website-development-mabopane",
+    "/website-development-pretoria",
+    "/website-development-pretoria-east",
+    "/website-development-soshanguve",
+    "/work"
+  ],
+  "sitemap_source": "import type { MetadataRoute } from \"next\";\nimport { insightSlugs } from \"./insights/content\";\n\nconst baseUrl = \"https://carterdigitals.co.za\";\nconst siteUpdated = new Date(\"2026-09-01T00:00:00+02:00\");\n\nexport default function sitemap(): MetadataRoute.Sitemap {\n  const routes = [\n    { path: \"\", priority: 1, changeFrequency: \"weekly\" as const },\n    { path: \"/services\", priority: 0.95, changeFrequency: \"monthly\" as const },\n    { path: \"/pricing\", priority: 0.8, changeFrequency: \"monthly\" as const },\n    { path: \"/contact\", priority: 0.8, changeFrequency: \"monthly\" as const },\n    { path: \"/about\", priority: 0.85, changeFrequency: \"monthly\" as const },\n    { path: \"/company-profile\", priority: 0.88, changeFrequency: \"monthly\" as const },\n    { path: \"/work\", priority: 0.9, changeFrequency: \"monthly\" as const },\n    { path: \"/insights\", priority: 0.9, changeFrequency: \"weekly\" as const },\n    ...insightSlugs.map((slug, index) => ({ path: `/insights/${slug}`, priority: index === 0 ? 0.88 : 0.84, changeFrequency: \"monthly\" as const })),\n    { path: \"/privacy\", priority: 0.5, changeFrequency: \"yearly\" as const },\n    { path: \"/terms\", priority: 0.5, changeFrequency: \"yearly\" as const },\n    { path: \"/seo-geo-pretoria\", priority: 0.92, changeFrequency: \"monthly\" as const },\n    { path: \"/website-development-pretoria\", priority: 0.95, changeFrequency: \"monthly\" as const },\n    { path: \"/website-development-soshanguve\", priority: 0.92, changeFrequency: \"monthly\" as const },\n    { path: \"/website-development-mabopane\", priority: 0.88, changeFrequency: \"monthly\" as const },\n    { path: \"/website-development-centurion\", priority: 0.86, changeFrequency: \"monthly\" as const },\n    { path: \"/website-development-pretoria-east\", priority: 0.86, changeFrequency: \"monthly\" as const },\n    { path: \"/web-application-development-pretoria\", priority: 0.9, changeFrequency: \"monthly\" as const },\n    { path: \"/website-development-johannesburg\", priority: 0.85, changeFrequency: \"monthly\" as const },\n    { path: \"/offerings/premium-websites\", priority: 0.9, changeFrequency: \"monthly\" as const },\n    { path: \"/offerings/web-applications\", priority: 0.9, changeFrequency: \"monthly\" as const },\n    { path: \"/offerings/business-systems\", priority: 0.9, changeFrequency: \"monthly\" as const },\n    { path: \"/offerings/creative-media\", priority: 0.8, changeFrequency: \"monthly\" as const },\n    { path: \"/offerings/ai-clone-avatar-videos\", priority: 0.88, changeFrequency: \"monthly\" as const },\n  ];\n\n  return routes.map(({ path, ...entry }) => ({\n    url: `${baseUrl}${path}`,\n    lastModified: siteUpdated,\n    ...entry,\n  }));\n}\n",
+  "enquiry_destinations": {
+    "primary": "/contact#enquiry",
+    "homepage_legacy": [
+      "/#brief",
+      "/#enquiry",
+      "/#project-route"
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+.premium-divider{
+  --divider-bg:#f3f1eb;
+  --divider-ink:#08243a;
+  --divider-line:rgba(8,36,58,.18);
+  position:relative;
+  z-index:2;
+  display:grid;
+  place-items:center;
+  min-height:clamp(4.2rem,8vw,6.5rem);
+  overflow:hidden;
+  padding:0 clamp(1rem,5vw,6rem);
+  background:var(--divider-bg);
+  color:var(--divider-ink);
+}
+.premium-divider::before{
+  content:"";
+  position:absolute;
+  inset:50% 0 auto;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(215,25,63,.42) 16%,rgba(8,91,191,.3) 50%,rgba(214,168,62,.42) 84%,transparent);
+  box-shadow:0 0 18px rgba(17,189,233,.12);
+}
+.premium-divider--dark{
+  --divider-bg:#061a29;
+  --divider-ink:#edf8fa;
+  --divider-line:rgba(237,248,250,.2);
+}
+.premium-divider__inner{
+  position:relative;
+  display:grid;
+  grid-template-columns:auto minmax(2rem,1fr) auto minmax(2rem,1fr) auto;
+  align-items:center;
+  gap:clamp(.7rem,2vw,1.5rem);
+  width:min(100%,92rem);
+}
+@media(prefers-reduced-motion:no-preference){
+  .premium-divider::before{animation:premium-divider-sheen 7s ease-in-out infinite}
+}
+@keyframes premium-divider-sheen{
+  0%,100%{opacity:.55;transform:scaleX(.92)}
+  50%{opacity:1;transform:scaleX(1)}
+}
+.premium-divider__number,.premium-divider__mark{
+  display:grid;
+  place-items:center;
+  width:2.2rem;
+  aspect-ratio:1;
+  border:1px solid var(--divider-line);
+  border-radius:50%;
+  background:color-mix(in srgb,var(--divider-bg) 82%,#fff);
+  font:900 .58rem/1 var(--font-label,monospace);
+  letter-spacing:.1em;
+}
+.premium-divider__number{color:#d7193f}
+.premium-divider__mark{color:#075bbf}
+.premium-divider__line{height:1px;background:var(--divider-line)}
+.premium-divider strong{
+  color:var(--divider-ink);
+  font:900 .62rem/1.2 var(--font-label,monospace);
+  letter-spacing:.2em;
+  text-align:center;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+@media(max-width:560px){
+  .premium-divider{min-height:4rem;padding-inline:.75rem}
+  .premium-divider__inner{gap:.55rem}
+  .premium-divider__number,.premium-divider__mark{width:1.8rem;font-size:.5rem}
+  .premium-divider strong{font-size:.5rem;letter-spacing:.12em}
+}
+@media(prefers-reduced-motion:reduce){.premium-divider::before{animation:none}}

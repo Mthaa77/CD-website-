@@ -1,0 +1,30 @@
+:root {
+  --sc-canvas: #090b10;
+  --sc-surface: #151a24;
+  --sc-ink: #f7f8fc;
+  --sc-ink-soft: #b7c1d1;
+  --sc-accent: #f04452;
+  --sc-accent-ink: #090b10;
+  --sc-blue: #315cff;
+  --sc-gold: #dfb86f;
+  --sc-font-display: var(--font-geist-sans), sans-serif;
+  --sc-font-text: var(--font-geist-sans), sans-serif;
+  --sc-font-editorial: var(--font-editorial), Georgia, serif;
+  --sc-radius-control: 999px;
+  --sc-radius-panel: 1.5rem;
+  --sc-shadow-panel: 0 24px 64px rgb(0 0 0 / 24%);
+  --sc-space-unit: .25rem;
+  --sc-content-width: 80rem;
+  --sc-motion-fast: 180ms;
+  --sc-motion-enter: 480ms;
+}
+
+#enquiry, #brief, #project-route { scroll-margin-top: 7rem; }
+.enquiry-anchor { display: block; height: 0; }
+.contact-whatsapp-fallback { display: inline-flex; gap: .6rem; align-items: center; padding: .85rem 0; text-decoration: underline; text-underline-offset: .25em; }
+.contact-whatsapp-fallback:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) {
+  :root { --sc-motion-fast: 0ms; --sc-motion-enter: 0ms; }
+}
+
+.contact-goal-context { padding: 16px 20px; border: 1px solid #c9d7ef; border-radius: 16px; background: #eef3fc; color: #17345b; font-size: 14px; line-height: 1.6; margin-bottom: 20px; }

@@ -1,0 +1,914 @@
+.conversion-xray {
+  --xray-ink: #071b2a;
+  --xray-cyan: #32cfe7;
+  --xray-coral: #e94e6b;
+  --xray-gold: #c79b46;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(5.5rem, 10vw, 10rem) clamp(1rem, 5vw, 5rem) clamp(3rem, 6vw, 5rem);
+  color: var(--xray-ink);
+  background:
+    radial-gradient(circle at 2% 4%, rgba(238, 91, 117, .23), transparent 25rem),
+    radial-gradient(circle at 96% 36%, rgba(50, 207, 231, .2), transparent 30rem),
+    linear-gradient(145deg, #f4f1e9 0%, #e7edf0 58%, #f6f0e4 100%);
+}
+
+.conversion-xray::before {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  content: "";
+  opacity: .34;
+  background-image:
+    linear-gradient(rgba(7, 27, 42, .08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(7, 27, 42, .08) 1px, transparent 1px);
+  background-size: 4rem 4rem;
+  mask-image: linear-gradient(135deg, #000, transparent 78%);
+  pointer-events: none;
+}
+
+.conversion-xray::after {
+  position: absolute;
+  z-index: -2;
+  right: -.08em;
+  bottom: -.26em;
+  content: "XR";
+  color: rgba(7, 27, 42, .045);
+  font: 900 clamp(17rem, 40vw, 43rem)/.8 var(--font-body, sans-serif);
+  letter-spacing: -.16em;
+  pointer-events: none;
+}
+
+.conversion-xray__atmosphere {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+}
+
+.conversion-xray__atmosphere i {
+  position: absolute;
+  border: 1px solid rgba(7, 27, 42, .14);
+  border-radius: 50%;
+  transform: rotate(22deg);
+}
+
+.conversion-xray__atmosphere i:nth-child(1) {
+  top: -13rem;
+  right: -11rem;
+  width: 38rem;
+  height: 38rem;
+}
+
+.conversion-xray__atmosphere i:nth-child(2) {
+  top: -5rem;
+  right: -4rem;
+  width: 23rem;
+  height: 23rem;
+  border-color: rgba(50, 207, 231, .3);
+}
+
+.conversion-xray__atmosphere i:nth-child(3) {
+  bottom: -8rem;
+  left: -5rem;
+  width: 19rem;
+  height: 19rem;
+  border-color: rgba(233, 78, 107, .22);
+}
+
+.conversion-xray__header,
+.conversion-xray__workspace,
+.conversion-xray__footer {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 94rem);
+  margin-inline: auto;
+}
+
+.conversion-xray__header {
+  margin-bottom: clamp(2.7rem, 5vw, 5rem);
+}
+
+.conversion-xray__header-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(7, 27, 42, .17);
+  color: #397384;
+  font: 850 .55rem/1.2 var(--font-label, monospace);
+  letter-spacing: .16em;
+}
+
+.conversion-xray__header-line span {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.conversion-xray__header-line b {
+  color: #6d8188;
+  font-size: .48rem;
+}
+
+.conversion-xray__header h2 {
+  max-width: 11ch;
+  margin: 1.3rem 0 1.35rem;
+  color: var(--xray-ink);
+  font: 400 clamp(3.6rem, 7.2vw, 8.4rem)/.8 var(--font-display, Georgia, serif);
+  letter-spacing: -.082em;
+  text-wrap: balance;
+}
+
+.conversion-xray__header h2 em {
+  color: var(--xray-coral);
+  font-style: italic;
+}
+
+.conversion-xray__header p {
+  max-width: 43rem;
+  margin: 0;
+  color: #4f6670;
+  font-size: clamp(.98rem, 1.4vw, 1.18rem);
+  line-height: 1.72;
+}
+
+.conversion-xray__workspace {
+  display: grid;
+  grid-template-columns: minmax(17rem, .52fr) minmax(0, 1.48fr);
+  overflow: hidden;
+  border: 1px solid rgba(7, 27, 42, .23);
+  border-radius: 2rem;
+  background: rgba(255, 255, 255, .35);
+  box-shadow: 0 2.8rem 6rem rgba(7, 27, 42, .16), inset 0 1px rgba(255, 255, 255, .8);
+}
+
+.conversion-xray__rail {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: clamp(1.1rem, 2.2vw, 2rem);
+  border-right: 1px solid rgba(7, 27, 42, .16);
+  background: rgba(246, 244, 237, .64);
+}
+
+.conversion-xray__rail-head,
+.conversion-xray__chamber-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font: 850 .51rem/1.2 var(--font-label, monospace);
+  letter-spacing: .14em;
+}
+
+.conversion-xray__rail-head {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(7, 27, 42, .16);
+  color: #486672;
+}
+
+.conversion-xray__rail-head b {
+  color: var(--xray-coral);
+}
+
+.conversion-xray__signals {
+  display: grid;
+  margin-top: .45rem;
+}
+
+.conversion-xray__signals button {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2rem 1fr auto;
+  gap: .55rem;
+  align-items: center;
+  min-height: 5.5rem;
+  padding: .75rem .35rem;
+  border: 0;
+  border-bottom: 1px solid rgba(7, 27, 42, .14);
+  color: #667b84;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  transition: color .4s ease, background .4s ease, padding .4s cubic-bezier(.16, 1, .3, 1), transform .4s cubic-bezier(.16, 1, .3, 1);
+}
+
+.conversion-xray__signals button::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -.35rem;
+  width: 3px;
+  content: "";
+  background: var(--xray-coral);
+  opacity: 0;
+  transition: opacity .35s ease;
+}
+
+.conversion-xray__signals button:hover,
+.conversion-xray__signals button:focus-visible,
+.conversion-xray__signals button.is-active {
+  color: var(--xray-ink);
+  background: linear-gradient(90deg, rgba(233, 78, 107, .13), transparent);
+  padding-left: .7rem;
+}
+
+.conversion-xray__signals button:hover > svg,
+.conversion-xray__signals button:focus-visible > svg,
+.conversion-xray__signals button.is-active > svg {
+  color: var(--xray-coral);
+  transform: translateX(3px);
+}
+
+.conversion-xray__signals button.is-active::before {
+  opacity: 1;
+}
+
+.conversion-xray__signals button:focus-visible {
+  outline: 2px solid var(--xray-cyan);
+  outline-offset: -2px;
+}
+
+.conversion-xray__signals button > span {
+  align-self: start;
+  padding-top: .1rem;
+  color: var(--xray-coral);
+  font: 850 .54rem/1 var(--font-label, monospace);
+  letter-spacing: .1em;
+}
+
+.conversion-xray__signals button strong {
+  font: 700 .78rem/1.25 var(--font-body, sans-serif);
+}
+
+.conversion-xray__signals button > svg {
+  color: #9aa9ad;
+  transition: color .4s ease, transform .4s cubic-bezier(.16, 1, .3, 1);
+}
+
+.conversion-xray__rail-foot {
+  display: flex;
+  align-items: flex-start;
+  gap: .55rem;
+  margin-top: auto;
+  padding-top: 1.3rem;
+  color: #67838c;
+  font: 850 .48rem/1.35 var(--font-label, monospace);
+  letter-spacing: .13em;
+}
+
+.conversion-xray__rail-foot i,
+.conversion-xray__footer i {
+  display: inline-block;
+  width: .45rem;
+  height: .45rem;
+  flex: 0 0 auto;
+  margin-top: .08rem;
+  border-radius: 50%;
+  background: #1caf7b;
+  box-shadow: 0 0 .7rem rgba(28, 175, 123, .65);
+}
+
+.conversion-xray__chamber {
+  position: relative;
+  min-width: 0;
+  padding: clamp(1.1rem, 2.2vw, 2rem);
+  color: #f3fbfc;
+  background:
+    radial-gradient(circle at 58% 42%, rgba(49, 208, 231, .16), transparent 21rem),
+    radial-gradient(circle at 6% 90%, rgba(233, 78, 107, .14), transparent 20rem),
+    linear-gradient(145deg, #071f32, #04101d 72%);
+}
+
+.conversion-xray__chamber::before {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  content: "";
+  opacity: .24;
+  background-image:
+    linear-gradient(rgba(126, 220, 232, .08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(126, 220, 232, .08) 1px, transparent 1px);
+  background-size: 4rem 4rem;
+  mask-image: radial-gradient(circle at 52% 45%, #000, transparent 80%);
+  pointer-events: none;
+}
+
+.conversion-xray__chamber > * {
+  position: relative;
+  z-index: 1;
+}
+
+.conversion-xray__chamber-head {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(132, 223, 232, .18);
+  color: #68dbe8;
+}
+
+.conversion-xray__chamber-head span {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+}
+
+.conversion-xray__chamber-head b {
+  color: #91afb7;
+  font-size: .47rem;
+}
+
+.conversion-xray__chamber-body {
+  display: grid;
+  grid-template-columns: minmax(17rem, .95fr) minmax(0, 1.05fr);
+  gap: clamp(1.25rem, 3.5vw, 4rem);
+  align-items: center;
+  min-height: 29rem;
+  padding-block: 1.4rem 1.7rem;
+  animation: conversion-xray-in .55s cubic-bezier(.16, 1, .3, 1) both;
+}
+
+.conversion-xray__scan-field {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 24rem;
+  overflow: hidden;
+  border: 1px solid rgba(126, 220, 232, .23);
+  border-radius: 1.35rem;
+  background: radial-gradient(circle at center, rgba(57, 204, 227, .14), transparent 52%), rgba(3, 15, 27, .42);
+  box-shadow: inset 0 0 4rem rgba(41, 196, 223, .08), 0 1.7rem 3.7rem rgba(0, 0, 0, .2);
+}
+
+.conversion-xray__scan-grid {
+  position: absolute;
+  inset: 0;
+  opacity: .48;
+  background-image:
+    linear-gradient(rgba(126, 220, 232, .08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(126, 220, 232, .08) 1px, transparent 1px);
+  background-size: 2.3rem 2.3rem;
+  mask-image: radial-gradient(circle at center, #000, transparent 75%);
+}
+
+.conversion-xray__scan-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1px solid rgba(101, 221, 233, .38);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) rotateX(65deg) rotateZ(-14deg);
+}
+
+.conversion-xray__scan-ring--outer {
+  width: 90%;
+  height: 13rem;
+  box-shadow: 0 0 3rem rgba(50, 207, 231, .12);
+}
+
+.conversion-xray__scan-ring--middle {
+  width: 68%;
+  height: 9.5rem;
+  border-color: rgba(232, 91, 114, .42);
+  transform: translate(-50%, -50%) rotateX(65deg) rotateZ(14deg);
+}
+
+.conversion-xray__scan-ring--inner {
+  width: 45%;
+  height: 6rem;
+  border-color: rgba(240, 201, 99, .5);
+}
+
+.conversion-xray__scan-line {
+  position: absolute;
+  top: 12%;
+  bottom: 12%;
+  left: 50%;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, var(--xray-cyan), transparent);
+  box-shadow: 0 0 1.2rem rgba(50, 207, 231, .8);
+  opacity: .72;
+  transform: rotate(33deg);
+}
+
+.conversion-xray__scan-core {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 10.5rem;
+  height: 10.5rem;
+  padding: 1.2rem;
+  border: 1px solid rgba(233, 247, 248, .58);
+  border-radius: 44% 56% 52% 48%;
+  color: #071b2a;
+  background: linear-gradient(145deg, #90eff0, #f0ca61 76%);
+  box-shadow: 0 0 0 1.1rem rgba(50, 207, 231, .06), 0 1.6rem 3.4rem rgba(0, 0, 0, .22), 0 0 4rem rgba(50, 207, 231, .35), inset 0 1px #fff;
+  text-align: center;
+  transform: rotate(-8deg);
+}
+
+.conversion-xray__scan-core span {
+  font: 900 .56rem/1 var(--font-label, monospace);
+  letter-spacing: .15em;
+  transform: rotate(8deg);
+}
+
+.conversion-xray__scan-core strong {
+  max-width: 8ch;
+  font: 400 1.65rem/.83 var(--font-display, Georgia, serif);
+  letter-spacing: -.065em;
+  transform: rotate(8deg);
+}
+
+.conversion-xray__scan-core small {
+  font: 900 .44rem/1 var(--font-label, monospace);
+  letter-spacing: .14em;
+  transform: rotate(8deg);
+}
+
+.conversion-xray__scan-tag {
+  position: absolute;
+  z-index: 2;
+  padding: .42rem .55rem;
+  border: 1px solid rgba(129, 223, 232, .35);
+  border-radius: 99px;
+  color: #b9e8eb;
+  background: rgba(3, 17, 29, .68);
+  font: 850 .45rem/1 var(--font-label, monospace);
+  letter-spacing: .13em;
+  backdrop-filter: blur(12px);
+}
+
+.conversion-xray__scan-tag--one { top: 19%; left: 10%; color: #69dce8; }
+.conversion-xray__scan-tag--two { top: 22%; right: 9%; color: #ef8194; }
+.conversion-xray__scan-tag--three { right: 12%; bottom: 18%; color: #f1cf6d; }
+
+.conversion-xray__finding {
+  min-width: 0;
+  padding-top: .4rem;
+}
+
+.conversion-xray__finding > span {
+  color: #f0c861;
+  font: 850 .5rem/1.2 var(--font-label, monospace);
+  letter-spacing: .16em;
+}
+
+.conversion-xray__finding h3 {
+  max-width: 12ch;
+  margin: .9rem 0 1.5rem;
+  color: #f4fbfc;
+  font: 400 clamp(2.15rem, 4.1vw, 4.8rem)/.86 var(--font-display, Georgia, serif);
+  letter-spacing: -.07em;
+}
+
+.conversion-xray__finding-meta {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(132, 223, 232, .17);
+  color: #9bb9c1;
+  font: 850 .5rem/1.2 var(--font-label, monospace);
+  letter-spacing: .12em;
+}
+
+.conversion-xray__finding-meta b {
+  color: var(--xray-coral);
+}
+
+.conversion-xray__finding-meta i {
+  width: 2rem;
+  height: 1px;
+  background: linear-gradient(90deg, var(--xray-coral), transparent);
+}
+
+.conversion-xray__translation {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid rgba(132, 223, 232, .2);
+  border-radius: 1rem;
+  background: rgba(132, 223, 232, .17);
+}
+
+.conversion-xray__translation > div {
+  display: grid;
+  gap: .55rem;
+  min-width: 0;
+  padding: 1rem;
+  background: rgba(3, 17, 29, .62);
+}
+
+.conversion-xray__translation span {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  color: #68dce8;
+  font: 850 .46rem/1.2 var(--font-label, monospace);
+  letter-spacing: .14em;
+}
+
+.conversion-xray__translation > div:first-child span {
+  color: #6be0a6;
+}
+
+.conversion-xray__translation strong {
+  color: #f2fafb;
+  font: 400 clamp(1.15rem, 1.9vw, 1.7rem)/.95 var(--font-display, Georgia, serif);
+  letter-spacing: -.035em;
+}
+
+.conversion-xray__translation p {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 0 1rem 1rem;
+  color: #adc3ca;
+  font-size: .76rem;
+  line-height: 1.55;
+  background: rgba(3, 17, 29, .62);
+}
+
+.conversion-xray__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: .65rem;
+  min-height: 3rem;
+  margin-top: 1rem;
+  padding: 0 1.1rem;
+  border: 1px solid rgba(255, 255, 255, .32);
+  border-radius: 99px;
+  color: #071b2a;
+  background: linear-gradient(135deg, #fff, #b7eef0 68%, #7ad6e5);
+  box-shadow: 0 1rem 2.3rem rgba(50, 207, 231, .14), inset 0 1px #fff;
+  font-size: .7rem;
+  font-weight: 900;
+  cursor: pointer;
+  transition: transform .35s cubic-bezier(.16, 1, .3, 1), box-shadow .35s ease;
+}
+
+.conversion-xray__cta:hover,
+.conversion-xray__cta:focus-visible {
+  box-shadow: 0 1.4rem 2.8rem rgba(50, 207, 231, .23), inset 0 1px #fff;
+  transform: translateY(-3px);
+}
+
+.conversion-xray__cta:focus-visible {
+  outline: 2px solid #f0c861;
+  outline-offset: 3px;
+}
+
+.conversion-xray__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.6rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(7, 27, 42, .16);
+  color: #5c7881;
+  font: 850 .49rem/1.2 var(--font-label, monospace);
+  letter-spacing: .13em;
+}
+
+.conversion-xray__footer > span {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+}
+
+.conversion-xray__footer > strong {
+  color: #234a59;
+}
+
+.conversion-xray__footer > strong b {
+  color: var(--xray-coral);
+  font-size: .8rem;
+}
+
+@keyframes conversion-xray-in {
+  from { opacity: .2; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (max-width: 980px) {
+  .conversion-xray__workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .conversion-xray__rail {
+    border-right: 0;
+    border-bottom: 1px solid rgba(7, 27, 42, .16);
+  }
+
+  .conversion-xray__signals {
+    grid-template-columns: repeat(5, minmax(9.5rem, 1fr));
+    gap: .45rem;
+    overflow-x: auto;
+    padding-bottom: .35rem;
+    scrollbar-width: thin;
+  }
+
+  .conversion-xray__signals button {
+    min-height: 5.2rem;
+    padding: .7rem;
+    border: 1px solid rgba(7, 27, 42, .14);
+    border-radius: .8rem;
+    background: rgba(255, 255, 255, .35);
+  }
+
+  .conversion-xray__signals button::before {
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: auto;
+    height: 3px;
+  }
+
+  .conversion-xray__signals button:hover,
+  .conversion-xray__signals button:focus-visible,
+  .conversion-xray__signals button.is-active {
+    padding-left: .7rem;
+    background: rgba(233, 78, 107, .13);
+    transform: translateY(-2px);
+  }
+
+  .conversion-xray__rail-foot {
+    margin-top: 1rem;
+  }
+
+  .conversion-xray__chamber-body {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 680px) {
+  .conversion-xray {
+    padding: 4.5rem .8rem 3rem;
+  }
+
+  .conversion-xray__header-line b {
+    display: none;
+  }
+
+  .conversion-xray__header h2 {
+    max-width: 9ch;
+    font-size: clamp(3.1rem, 14vw, 5.3rem);
+  }
+
+  .conversion-xray__header p {
+    font-size: .9rem;
+  }
+
+  .conversion-xray__workspace {
+    border-radius: 1.25rem;
+  }
+
+  .conversion-xray__rail {
+    padding: 1rem;
+  }
+
+  .conversion-xray__chamber {
+    padding: 1rem;
+  }
+
+  .conversion-xray__chamber-head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: .45rem;
+  }
+
+  .conversion-xray__chamber-body {
+    grid-template-columns: 1fr;
+    gap: 1.35rem;
+    padding-block: 1rem 1.35rem;
+  }
+
+  .conversion-xray__scan-field {
+    min-height: 19rem;
+  }
+
+  .conversion-xray__scan-core {
+    width: 8.8rem;
+    height: 8.8rem;
+  }
+
+  .conversion-xray__scan-core strong {
+    font-size: 1.45rem;
+  }
+
+  .conversion-xray__finding h3 {
+    max-width: 14ch;
+    font-size: clamp(2.25rem, 10vw, 4rem);
+  }
+
+  .conversion-xray__translation {
+    grid-template-columns: 1fr;
+  }
+
+  .conversion-xray__translation p {
+    grid-column: auto;
+  }
+
+  .conversion-xray__footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 420px) {
+  .conversion-xray {
+    padding-inline: .65rem;
+  }
+
+  .conversion-xray__signals {
+    grid-auto-flow: column;
+    grid-template-columns: none;
+    grid-auto-columns: 13rem;
+  }
+
+  .conversion-xray__scan-field {
+    min-height: 17rem;
+  }
+
+  .conversion-xray__scan-tag {
+    font-size: .4rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .conversion-xray__signals button,
+  .conversion-xray__signals button > svg,
+  .conversion-xray__cta,
+  .conversion-xray__chamber-body {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* The scan chamber keeps the live friction label crisp and semantic while
+   React Bits owns the pointer-reactive surface. */
+.conversion-xray__scan-field {
+  perspective: 1100px;
+  transform-style: preserve-3d;
+}
+
+.conversion-xray__lens-core {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: min(10.5rem, 44%);
+  aspect-ratio: 1;
+  padding: 1rem;
+  border: 1px solid rgba(233, 247, 248, .58);
+  border-radius: 44% 56% 52% 48%;
+  color: #071b2a;
+  background: linear-gradient(145deg, #90eff0, #f0ca61 76%);
+  box-shadow: 0 0 0 1.1rem rgba(50, 207, 231, .06), 0 1.6rem 3.4rem rgba(0, 0, 0, .22), 0 0 4rem rgba(50, 207, 231, .35), inset 0 1px #fff;
+  text-align: center;
+  transform: rotate(-8deg) translateZ(28px);
+}
+
+.conversion-xray__lens-core::before {
+  position: absolute;
+  inset: .65rem;
+  content: "";
+  border: 1px solid rgba(7, 27, 42, .24);
+  border-radius: inherit;
+}
+
+.conversion-xray__lens-core > * {
+  position: relative;
+  z-index: 1;
+  transform: rotate(8deg);
+}
+
+.conversion-xray__lens-core span {
+  font: 900 .56rem/1 var(--font-label, monospace);
+  letter-spacing: .15em;
+}
+
+.conversion-xray__lens-core strong {
+  max-width: 8ch;
+  font: 400 1.65rem/.83 var(--font-display, Georgia, serif);
+  letter-spacing: -.065em;
+}
+
+.conversion-xray__lens-core small {
+  font: 900 .44rem/1 var(--font-label, monospace);
+  letter-spacing: .14em;
+}
+
+.conversion-xray__lens-axis {
+  position: absolute;
+  z-index: 1;
+  opacity: .72;
+  pointer-events: none;
+}
+
+.conversion-xray__lens-axis--horizontal {
+  top: 50%;
+  right: 8%;
+  left: 8%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(50, 207, 231, .75), transparent);
+  box-shadow: 0 0 1rem rgba(50, 207, 231, .55);
+}
+
+.conversion-xray__lens-axis--vertical {
+  top: 10%;
+  bottom: 10%;
+  left: 50%;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(239, 98, 114, .7), transparent);
+  box-shadow: 0 0 1rem rgba(239, 98, 114, .45);
+}
+
+@media (max-width: 680px) {
+  .conversion-xray__lens-core {
+    width: 9rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .conversion-xray__lens-core {
+    width: 7.8rem;
+  }
+
+  .conversion-xray__lens-core strong {
+    font-size: 1.4rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .conversion-xray__lens-core {
+    transform: rotate(-8deg);
+  }
+}
+
+/* The scan is now a real React Bits SpotlightCard composition: CSS rings
+   carry the x-ray language while the pointer field supplies the interaction. */
+.conversion-xray__scan-field.card-spotlight {
+  min-height: 24rem;
+  padding: 0;
+  border: 1px solid rgba(126, 220, 232, .23);
+  border-radius: 1.35rem;
+  background: radial-gradient(circle at center, rgba(57, 204, 227, .14), transparent 52%), rgba(3, 15, 27, .42);
+  box-shadow: inset 0 0 4rem rgba(41, 196, 223, .08), 0 1.7rem 3.7rem rgba(0, 0, 0, .2);
+}
+
+.conversion-xray__scan-field.card-spotlight::before {
+  z-index: 3;
+}
+
+.conversion-xray__scan-field > * { position: absolute; }
+.conversion-xray__scan-field > .conversion-xray__lens-core { position: relative; z-index: 4; }
+.conversion-xray__scan-field > .conversion-xray__scan-grid,
+.conversion-xray__scan-field > .conversion-xray__scan-ring,
+.conversion-xray__scan-field > .conversion-xray__scan-line,
+.conversion-xray__scan-field > .conversion-xray__lens-axis,
+.conversion-xray__scan-field > .conversion-xray__scan-tag { z-index: 1; }
+
+.conversion-xray__scan-field .conversion-xray__scan-grid {
+  inset: 0;
+  opacity: .48;
+  background-image: linear-gradient(rgba(126, 220, 232, .08) 1px, transparent 1px), linear-gradient(90deg, rgba(126, 220, 232, .08) 1px, transparent 1px);
+  background-size: 2.3rem 2.3rem;
+  mask-image: radial-gradient(circle at center, #000, transparent 75%);
+}
+
+.conversion-xray__scan-field .conversion-xray__scan-ring {
+  top: 50%;
+  left: 50%;
+  border: 1px solid rgba(101, 221, 233, .38);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) rotateX(65deg) rotateZ(-14deg);
+}
+
+.conversion-xray__scan-field .conversion-xray__scan-ring--outer { width: 90%; height: 13rem; box-shadow: 0 0 3rem rgba(50, 207, 231, .12); }
+.conversion-xray__scan-field .conversion-xray__scan-ring--middle { width: 68%; height: 9.5rem; border-color: rgba(232, 91, 114, .42); transform: translate(-50%, -50%) rotateX(65deg) rotateZ(14deg); }
+.conversion-xray__scan-field .conversion-xray__scan-ring--inner { width: 45%; height: 6rem; border-color: rgba(240, 201, 99, .5); }
+
+.conversion-xray__scan-field .conversion-xray__scan-line {
+  top: 12%;
+  bottom: 12%;
+  left: 50%;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, var(--xray-cyan), transparent);
+  box-shadow: 0 0 1.2rem rgba(50, 207, 231, .8);
+  opacity: .72;
+}
+
+@media (max-width: 680px) {
+  .conversion-xray__scan-field.card-spotlight { min-height: 21rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .conversion-xray__scan-field .conversion-xray__scan-ring,
+  .conversion-xray__scan-field .conversion-xray__scan-line { transition: none; }
+}
