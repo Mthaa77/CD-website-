@@ -1,0 +1,11 @@
+.cd-cinematic, .cd-cinematic-nav, .cd-menu-new, .cd-site {
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+.cd-cinematic :is(section, header) h2, .cd-site h1 {
+  font-family: var(--font-editorial), Georgia, serif;
+  font-weight: 400;
+  text-wrap: balance;
+  letter-spacing: -.035em;
+  line-height: 1.02;
+}
+.cd-cinematic section h2 em { font-style: italic; }

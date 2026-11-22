@@ -1,7 +1,7 @@
 import {catalogue} from './_lib/catalogue';
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
-import { DM_Serif_Display, Geist_Mono, Manrope, Sacramento } from "next/font/google";
+import { Geist_Mono, Sacramento } from "next/font/google";
 import "./globals.css";
 import "./sitewide-premium.css";
 import "./scrollcraft-foundation.css";
@@ -9,16 +9,17 @@ import "./_components/studio-typography.css";
 import "./_components/studio-wide.css";
 import "./_components/studio-editions.css";
 import "./carter-cinematic.css";
+import "./carter-type.css";
 import SiteTransitions from "./_components/site-transitions";
 
 
 const carterInter = localFont({ src: "../node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2", weight: "100 900", variable: "--cd-inter", display: "swap" });
 const carterSpace = localFont({ src: "../node_modules/@fontsource-variable/space-grotesk/files/space-grotesk-latin-wght-normal.woff2", weight: "300 700", variable: "--cd-space", display: "swap" });
 
-const workhorse = Manrope({
+const workhorse = localFont({
+  src: "../public/fonts/instrument-sans.woff2",
   variable: "--font-geist-sans",
-  subsets: ["latin"],
-  weight: ["400", "600", "700", "800"],
+  weight: "400 700",
   display: "swap",
 });
 
@@ -27,11 +28,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const editorial = DM_Serif_Display({
+const editorial = localFont({
+  src: [
+    { path: "../public/fonts/newsreader.woff2", style: "normal", weight: "200 800" },
+    { path: "../public/fonts/newsreader-italic.woff2", style: "italic", weight: "200 800" },
+  ],
   variable: "--font-editorial",
-  subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
   display: "swap",
 });
 
