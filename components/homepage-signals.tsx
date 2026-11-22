@@ -46,12 +46,21 @@ function SignalGraphic({ kind, accent }: { kind: SceneKey; accent: string }) {
           <circle cx="2" cy="2" r="1" fill="#b9d9ff" opacity=".2" />
         </pattern>
         <linearGradient id={uid + "-track"}>
-          <stop stopColor="#579dec" />
+          <stop stopColor="#f47193" />
+          <stop offset=".55" stopColor="#588cff" />
           <stop offset="1" stopColor={accent} />
+        </linearGradient>
+        <linearGradient id={uid + "-panel"} x2="1" y2="1">
+          <stop stopColor="#233f73" />
+          <stop offset="1" stopColor="#111124" />
         </linearGradient>
       </defs>
       <rect width="620" height="326" fill={`url(#${uid}-grid)`} />
-      <g fill="#142b48" stroke="#516f97" strokeWidth="1.4">
+      <g fill="none" stroke="#647da7" opacity=".2">
+        <circle cx="312" cy="161" r="101" strokeDasharray="2 9"/>
+        <circle cx="312" cy="161" r="126"/>
+      </g>
+      <g fill={`url(#${uid}-panel)`} stroke="#7397c4" strokeWidth="1.4">
         <rect x="36" y="107" rx="17" width="132" height="126" />
         <rect x="454" y="97" rx="20" width="132" height="145" />
       </g>
@@ -60,7 +69,7 @@ function SignalGraphic({ kind, accent }: { kind: SceneKey; accent: string }) {
         {kind === "enquiries" && <><path d="M59 134h76m-76 24h84m-84 24h84m-84 24h35"/><path d="M484 151l35 24 35-24m-70 0v52h70v-52z"/><path d="M310 159l12 12 19-22"/></>}
         {kind === "social" && <><circle cx="67" cy="145" r="10"/><circle cx="104" cy="145" r="10"/><circle cx="140" cy="145" r="10"/><path d="M58 185h83m-70 19h58m402-70h36m-74 22h96m-96 23h72m-72 25h39"/></>}
       </g>
-      <path d={track} fill="none" stroke="#6789b0" strokeWidth="9" opacity=".18" />
+      <path d={track} fill="none" stroke={`url(#${uid}-track)`} strokeWidth="13" opacity=".2" />
       <path d={track} fill="none" stroke="#567aa6" strokeWidth="2" />
       <path className="hs-signal-packet" d={track} pathLength="1" fill="none" stroke={accent} strokeWidth="6" strokeLinecap="round" />
       <path className="hs-signal-trace" d={track} pathLength="1" fill="none" stroke={`url(#${uid}-track)`} strokeWidth="3" strokeLinecap="round" />
@@ -69,7 +78,7 @@ function SignalGraphic({ kind, accent }: { kind: SceneKey; accent: string }) {
         <rect width="228" height="42" rx="14" fill="#10243c" stroke={accent} />
         <circle cx="23" cy="21" r="9" fill={accent}/>
         <path d="m19 21 3 3 5-6" fill="none" stroke="#0c1c30" strokeWidth="1.8"/>
-        <text x="42" y="26" fill="#eef6ff" fontSize="15">{kind === "whatsapp" ? "Conversation started" : kind === "enquiries" ? "Brief ready for follow-up" : "Visitor reached the landing page"}</text>
+        <text x="42" y="26" fill="#eef6ff" fontSize="15">{kind === "whatsapp" ? "Conversation started" : kind === "enquiries" ? "Brief ready for follow-up" : "Landing page opened"}</text>
       </g>
     </svg>
   );
@@ -104,8 +113,12 @@ export function HomepageSignals() {
 }
 
 export function HeroConversation() {
+  const uid = useId();
   return <svg className="hs-hero-chat" viewBox="0 0 162 238" aria-hidden="true" focusable="false">
-    <rect x="1" y="1" width="160" height="236" rx="24" fill="#101f34" stroke="#90b3df" strokeWidth="2"/>
+    <defs>
+      <linearGradient id={uid + "-rim"} x2="1" y2="1"><stop stopColor="#fb7492"/><stop offset=".55" stopColor="#5d8fff"/><stop offset="1" stopColor="#b4d1ff"/></linearGradient>
+    </defs>
+    <rect x="1" y="1" width="160" height="236" rx="24" fill="#0d1429" stroke={`url(#${uid}-rim)`} strokeWidth="2"/>
     <rect x="9" y="10" width="144" height="216" rx="17" fill="#142941"/>
     <path d="M9 42h144" stroke="#49688a"/>
     <circle cx="25" cy="27" r="7" fill="#91e9bd" />
@@ -127,8 +140,12 @@ export function HeroConversation() {
 }
 
 export function DeliveryGraphic() {
+  const uid = useId();
   return <svg className="hs-delivery-svg" viewBox="0 0 500 330" aria-hidden="true" focusable="false">
-    <rect x="44" y="30" width="412" height="270" rx="23" fill="#142944" stroke="#6388b6" />
+    <defs>
+      <linearGradient id={uid + "-delivery"} x2="1" y2="1"><stop stopColor="#22192e"/><stop offset=".64" stopColor="#13284b"/><stop offset="1" stopColor="#121020"/></linearGradient>
+    </defs>
+    <rect x="44" y="30" width="412" height="270" rx="23" fill={`url(#${uid}-delivery)`} stroke="#829dca" />
     <path d="M44 78h412" stroke="#6388b6" />
     <g fill="#9fbbe0"><circle cx="66" cy="55" r="4"/><circle cx="80" cy="55" r="4"/><circle cx="94" cy="55" r="4"/></g>
     <g fill="none" stroke="#526f96" strokeWidth="2"><rect x="71" y="107" width="138" height="72" rx="10"/><rect x="71" y="196" width="138" height="73" rx="10"/><rect x="227" y="107" width="202" height="162" rx="10"/></g>

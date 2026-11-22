@@ -48,7 +48,7 @@ export default function Home() {
           </div>
           <figure className="hs-hero-scene" aria-label="An illustrative path from finding a legal website to sending an enquiry">
             <div className="hs-hero-browser"><div className="hs-window"><i/><i/><i/><span>I.M Attorneys Inc</span></div><ProjectScreen hero/></div>
-            <svg viewBox="0 0 620 430" preserveAspectRatio="none" aria-hidden="true"><path d="M35 92H130Q165 92 165 131V268Q165 319 218 319H489Q536 319 536 364V398" fill="none" stroke="#44759e" strokeWidth="1.5"/><path className="hs-hero-trace" pathLength="1" d="M35 92H130Q165 92 165 131V268Q165 319 218 319H489Q536 319 536 364V398" fill="none" stroke="#a9d9ff" strokeWidth="2.5"/></svg>
+            <svg viewBox="0 0 620 430" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="hs-hero-trace-palette"><stop stopColor="#ff7894"/><stop offset=".6" stopColor="#749dff"/><stop offset="1" stopColor="#a8caff"/></linearGradient></defs><path d="M35 92H130Q165 92 165 131V268Q165 319 218 319H489Q536 319 536 364V398" fill="none" stroke="#44759e" strokeWidth="1.5"/><path className="hs-hero-trace" pathLength="1" d="M35 92H130Q165 92 165 131V268Q165 319 218 319H489Q536 319 536 364V398" fill="none" stroke="url(#hs-hero-trace-palette)" strokeWidth="2.5"/></svg>
             <div className="hs-scene-step hs-scene-step--search"><Search size={18}/><span>Find a practice area</span></div>
             <div className="hs-scene-step hs-scene-step--message"><MessageCircle size={18}/><span>Send an enquiry</span></div>
             <HeroConversation/>
