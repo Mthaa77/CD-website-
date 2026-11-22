@@ -172,3 +172,58 @@
 @media (max-width: 760px) {
   .hs-signal-stage, .hs-process-grid { grid-template-columns: 1fr; }
 }
+
+/* Keep a complete still frame available before animation and when motion is paused. */
+.hs-hero-scene > .hs-hero-chat {
+  inset: auto 1% 14% auto;
+  width: 30%;
+  max-width: 10.5rem;
+  height: auto;
+  filter: drop-shadow(0 12px 20px #071426aa);
+}
+.hs-hero-browser { inset-inline-end: 18%; }
+.hs-signal-packet { opacity: 0; }
+.hs-signal-toast { font-family: var(--font-geist-sans), system-ui, sans-serif; }
+.hs-hero-chat { font-family: var(--font-geist-sans), system-ui, sans-serif; }
+
+@keyframes hs-chat-loop {
+  0%, 8%, 94%, 100% { opacity: 0; translate: 0 4px; }
+  15%, 87% { opacity: 1; translate: 0 0; }
+}
+@keyframes hs-packet-loop {
+  0% { opacity: 0; stroke-dashoffset: .12; }
+  14%, 76% { opacity: 1; }
+  88%, 100% { opacity: 0; stroke-dashoffset: -1; }
+}
+@keyframes hs-confirm-loop {
+  0%, 42%, 96%, 100% { opacity: 0; translate: 0 5px; }
+  54%, 86% { opacity: 1; translate: 0 0; }
+}
+@keyframes hs-hero-wire {
+  to { stroke-dashoffset: -.35; }
+}
+@keyframes hs-check-loop {
+  0%, 12%, 100% { stroke-dashoffset: 1; }
+  42%, 91% { stroke-dashoffset: 0; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  :root:not([data-carter-paused=true]) .hs-hero[data-scene-visible=true] .hs-hero-trace {
+    stroke-dasharray: .045 .025;
+    animation: hs-hero-wire 1.85s linear infinite;
+  }
+  :root:not([data-carter-paused=true]) .hs-hero[data-scene-visible=true] .hs-chat-message {
+    animation: hs-chat-loop 7s ease-in-out infinite;
+  }
+  :root:not([data-carter-paused=true]) .hs-hero[data-scene-visible=true] .hs-chat-reply { animation-delay: .65s; }
+  :root:not([data-carter-paused=true]) .hs-hero[data-scene-visible=true] .hs-chat-result { animation-name: hs-confirm-loop; }
+  :root:not([data-carter-paused=true]) .hs-home .cd-reveal[data-visible=true] .hs-signal-packet {
+    stroke-dasharray: .09 1;
+    animation: hs-packet-loop 3s linear infinite;
+  }
+  :root:not([data-carter-paused=true]) .hs-home .cd-reveal[data-visible=true] .hs-signal-toast {
+    animation: hs-confirm-loop 3s ease-in-out infinite;
+  }
+  :root:not([data-carter-paused=true]) .hs-home .cd-reveal[data-visible=true] .hs-delivery-trace {
+    animation: hs-check-loop 4.5s ease-in-out infinite;
+  }
+}

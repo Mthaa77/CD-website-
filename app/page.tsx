@@ -7,7 +7,7 @@ import { HomeMotion, Reveal } from "../components/carter-motion";
 import { PackageFinder } from "../components/carter-tools";
 import { PremiumFaq } from "../components/home-showcase";
 import { HomepageStudio } from "../components/homepage-studio";
-import { DeliveryGraphic, HomepageSignals } from "../components/homepage-signals";
+import { DeliveryGraphic, HeroConversation, HomepageSignals } from "../components/homepage-signals";
 import { company, faqs, families, packages, priceNote, proof } from "../lib/data";
 import "./homepage-studio.css";
 
@@ -51,6 +51,7 @@ export default function Home() {
             <svg viewBox="0 0 620 430" preserveAspectRatio="none" aria-hidden="true"><path d="M35 92H130Q165 92 165 131V268Q165 319 218 319H489Q536 319 536 364V398" fill="none" stroke="#44759e" strokeWidth="1.5"/><path className="hs-hero-trace" pathLength="1" d="M35 92H130Q165 92 165 131V268Q165 319 218 319H489Q536 319 536 364V398" fill="none" stroke="#a9d9ff" strokeWidth="2.5"/></svg>
             <div className="hs-scene-step hs-scene-step--search"><Search size={18}/><span>Find a practice area</span></div>
             <div className="hs-scene-step hs-scene-step--message"><MessageCircle size={18}/><span>Send an enquiry</span></div>
+            <HeroConversation/>
             <figcaption>Illustrative enquiry journey · I.M Attorneys Inc</figcaption>
           </figure>
         </div>

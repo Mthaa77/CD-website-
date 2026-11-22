@@ -25,7 +25,7 @@ const scenes = [
     title: "Give a social post a next step.",
     copy: "Link an Instagram post, Facebook campaign or LinkedIn profile to the page that answers the visitor’s question and gives them a clear next action.",
     outcome: "A relevant landing page for each source.",
-    accent: "#dbc6ff", tags: ["Social profile", "Landing page", "Enquiry path"],
+    accent: "#b9d8ff", tags: ["Social profile", "Landing page", "Enquiry path"],
   },
 ] as const;
 
@@ -62,8 +62,15 @@ function SignalGraphic({ kind, accent }: { kind: SceneKey; accent: string }) {
       </g>
       <path d={track} fill="none" stroke="#6789b0" strokeWidth="9" opacity=".18" />
       <path d={track} fill="none" stroke="#567aa6" strokeWidth="2" />
+      <path className="hs-signal-packet" d={track} pathLength="1" fill="none" stroke={accent} strokeWidth="6" strokeLinecap="round" />
       <path className="hs-signal-trace" d={track} pathLength="1" fill="none" stroke={`url(#${uid}-track)`} strokeWidth="3" strokeLinecap="round" />
-      <g fill={accent}><circle cx="130" cy={kind === "whatsapp" ? 151 : kind === "enquiries" ? 180 : 112} r="5"/><circle cx="490" cy={kind === "whatsapp" ? 229 : kind === "enquiries" ? 240 : 136} r="5"/></g>
+      <g className="hs-signal-endpoints" fill={accent}><circle cx="130" cy={kind === "whatsapp" ? 151 : kind === "enquiries" ? 180 : 112} r="5"/><circle cx="490" cy={kind === "whatsapp" ? 229 : kind === "enquiries" ? 240 : 136} r="5"/></g>
+    <g className="hs-signal-toast" transform="translate(335 265)">
+        <rect width="228" height="42" rx="14" fill="#10243c" stroke={accent} />
+        <circle cx="23" cy="21" r="9" fill={accent}/>
+        <path d="m19 21 3 3 5-6" fill="none" stroke="#0c1c30" strokeWidth="1.8"/>
+        <text x="42" y="26" fill="#eef6ff" fontSize="15">{kind === "whatsapp" ? "Conversation started" : kind === "enquiries" ? "Brief ready for follow-up" : "Visitor reached the landing page"}</text>
+      </g>
     </svg>
   );
 }
@@ -94,6 +101,29 @@ export function HomepageSignals() {
       </div>
     </section>
   );
+}
+
+export function HeroConversation() {
+  return <svg className="hs-hero-chat" viewBox="0 0 162 238" aria-hidden="true" focusable="false">
+    <rect x="1" y="1" width="160" height="236" rx="24" fill="#101f34" stroke="#90b3df" strokeWidth="2"/>
+    <rect x="9" y="10" width="144" height="216" rx="17" fill="#142941"/>
+    <path d="M9 42h144" stroke="#49688a"/>
+    <circle cx="25" cy="27" r="7" fill="#91e9bd" />
+    <text x="39" y="31" fill="#f0f7ff" fontSize="12" fontWeight="650">WhatsApp</text>
+    <g className="hs-chat-message">
+      <rect x="18" y="58" width="119" height="33" rx="9" fill="#284361"/>
+      <text x="26" y="79" fill="#edf5ff" fontSize="11">Can I book a consult?</text>
+    </g>
+    <g className="hs-chat-message hs-chat-reply">
+      <rect x="27" y="101" width="116" height="33" rx="9" fill="#91e9bd"/>
+      <text x="35" y="122" fill="#0a2c24" fontSize="11">How can we help?</text>
+    </g>
+    <g className="hs-chat-message hs-chat-result">
+      <rect x="18" y="157" width="126" height="45" rx="11" fill="#142941" stroke="#82a8d6"/>
+      <path d="m27 180 4 4 7-8" fill="none" stroke="#91e9bd" strokeWidth="2"/>
+      <text x="45" y="185" fill="#e2edfc" fontSize="11">Enquiry received</text>
+    </g>
+  </svg>;
 }
 
 export function DeliveryGraphic() {

@@ -58,6 +58,11 @@ export function HomeMotion() {
       card.style.setProperty("--spot-x", `${event.clientX - bounds.left}px`);
       card.style.setProperty("--spot-y", `${event.clientY - bounds.top}px`);
     };
+    const scene = progress.current?.closest("main")?.querySelector<HTMLElement>(".hs-hero");
+    const sceneObserver = scene && "IntersectionObserver" in window
+      ? new IntersectionObserver(([entry]) => { scene.dataset.sceneVisible = String(entry.isIntersecting); })
+      : undefined;
+    if (scene) sceneObserver?.observe(scene);
     window.addEventListener("pointermove", spotlight, { passive: true });
     configure();
     resize();
@@ -67,6 +72,7 @@ export function HomeMotion() {
     window.addEventListener("pointermove", pointer, { passive: true });
     return () => {
       lenis?.destroy();
+      sceneObserver?.disconnect();
       window.removeEventListener("pointermove", spotlight);
       cancelAnimationFrame(pointerFrame);
       preference.removeEventListener("change", configure);
