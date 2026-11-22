@@ -9,3 +9,13 @@
   line-height: 1.02;
 }
 .cd-cinematic section h2 em { font-style: italic; }
+
+/* Keep navigation instant and animate the arriving content without moving fixed controls. */
+@keyframes carter-route-enter {
+  from { opacity: .78; }
+  to { opacity: 1; }
+}
+.site-page:has(.carter-route-enter) { animation: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .carter-route-enter { animation: carter-route-enter 420ms cubic-bezier(.22,.75,.25,1) both; }
+}

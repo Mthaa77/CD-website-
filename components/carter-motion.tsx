@@ -1,14 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { motion, useReducedMotion } from "motion/react";
 import { usePathname } from "next/navigation";
 import Lenis from "lenis";
 
 export function RouteMotion({ children }: { children: ReactNode }) {
   const pathname = usePathname();
-  const reduced = useReducedMotion();
-  return <motion.div key={pathname} initial={reduced || pathname === "/" ? false : { opacity: .85, y: 5 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: reduced ? 0 : .28 }}>{children}</motion.div>;
+  return <div key={pathname} className="carter-route-enter">{children}</div>;
 }
 
 export function HomeMotion() {

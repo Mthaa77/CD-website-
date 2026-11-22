@@ -46,7 +46,7 @@ export function HomepageStudio() {
               <path d={`M10 10H${10 + stepIndex * 140}`} stroke="#b9d9ff" strokeWidth="2"/>
               {[10,150,290].map((x, index) => <circle key={x} cx={x} cy="10" r={index === stepIndex ? 5 : 3} fill={index <= stepIndex ? "#b9d9ff" : "#6382a8"} />)}
             </svg>
-            <h3>{sector.labels[stepIndex]}</h3>
+            <h3 key={`${sector.key}-${stepIndex}`}>{sector.labels[stepIndex]}</h3>
             <p>{stepIndex === 0 ? `Give visitors a service page that answers what they came looking for. ${description}` : stepIndex === 1 ? "Bring the credentials, people and relevant work behind the service into view before asking visitors to get in touch." : "Offer an obvious next step with a short form or direct WhatsApp contact, depending on how your team handles enquiries."}</p>
           </div>
           <div className="hs-actions"><Link className="hs-button" href={`/contact?${briefing}#enquiry`}>Discuss this direction <ArrowUpRight size={17} aria-hidden="true"/></Link><Link className="hs-link" href={href}>View sector page</Link></div>

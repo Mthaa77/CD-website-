@@ -7,6 +7,7 @@ import { HomeMotion, Reveal } from "../components/carter-motion";
 import { PackageFinder } from "../components/carter-tools";
 import { PremiumFaq } from "../components/home-showcase";
 import { HomepageStudio } from "../components/homepage-studio";
+import { DeliveryGraphic, HomepageSignals } from "../components/homepage-signals";
 import { company, faqs, families, packages, priceNote, proof } from "../lib/data";
 import "./homepage-studio.css";
 
@@ -67,6 +68,7 @@ export default function Home() {
       </section></Reveal>
 
       <Reveal><HomepageStudio/></Reveal>
+      <Reveal><HomepageSignals/></Reveal>
       <Reveal><section className="hs-section hs-services" aria-labelledby="hs-services-title">
         <header className="hs-heading"><div><p className="hs-label">Services &amp; pricing</p><h2 id="hs-services-title">Choose what <em>you need to build.</em></h2></div><Link className="hs-link" href="/pricing">Compare packages <ArrowUpRight size={17} aria-hidden="true"/></Link></header>
         <div className="hs-services-grid">{families.map(({id,title}, index) => <Link href={`/${id}`} key={id} className="hs-service">
@@ -79,7 +81,7 @@ export default function Home() {
 
       <Reveal><section className="hs-section hs-process" aria-labelledby="hs-process-title">
         <header className="hs-heading"><div><p className="hs-label">How a project works</p><h2 id="hs-process-title">From first conversation <em>to handover.</em></h2></div><p>Work directly with Kabelo throughout your project.</p></header>
-        <ol>{process.map(([name,copy])=><li key={name}><h3>{name}</h3><p>{copy}</p></li>)}</ol>
+        <div className="hs-process-grid"><ol>{process.map(([name,copy])=><li key={name}><h3>{name}</h3><p>{copy}</p></li>)}</ol><figure><DeliveryGraphic/><figcaption>Review the site, check enquiry paths and hand over access.</figcaption></figure></div>
       </section></Reveal>
       <Reveal><PremiumFaq/></Reveal>
       <section className="hs-section hs-close" id="enquiry">
