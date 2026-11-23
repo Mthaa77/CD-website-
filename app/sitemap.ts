@@ -1,9 +1,11 @@
 import {sectors} from './_lib/catalogue';
 import type { MetadataRoute } from "next";
-import { insightSlugs } from "./insights/content";
+import { insightSlugs } from "./(retained)/insights/content";
 
 const baseUrl = "https://carterdigitals.co.za";
 const siteUpdated = new Date("2026-11-20T00:00:00+02:00");
+const redesignUpdated = new Date("2026-11-23T00:00:00+02:00");
+const redesignedPaths = new Set(["", "/websites", "/stores", "/apps", "/work", "/company"]);
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
@@ -35,7 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return routes.map(({ path, ...entry }) => ({
     url: `${baseUrl}${path}`,
-    lastModified: siteUpdated,
+    lastModified: redesignedPaths.has(path) ? redesignUpdated : siteUpdated,
     ...entry,
   }));
 }

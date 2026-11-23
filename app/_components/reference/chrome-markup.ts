@@ -1,0 +1,18 @@
+export const masthead = `<div id="bar"></div>
+<nav id="nav" aria-label="Main navigation"><div class="np">
+<a class="brand" href="/"><img src="/reference/emblem.jpg" width="150" height="130" alt="Carter Digitals logo"><span>Carter Digitals<small>Pretoria · South Africa</small></span></a>
+<div class="links" id="lk"><i class="ind" aria-hidden="true"></i><a href="/">Home</a><a href="/websites">Websites</a><a href="/stores">Stores</a><a href="/apps">Web apps</a><a href="/work">Work</a><a href="/company">Company</a></div>
+<a class="btn pri shine nct" href="https://wa.me/27724026893">Free preview</a>
+<button class="burger" id="burger" aria-label="Menu" aria-controls="menu" aria-expanded="false"><span></span><span></span></button>
+</div></nav>
+<div id="menu" inert aria-hidden="true"><a href="/">Home</a><a href="/websites">Websites</a><a href="/stores">Online stores</a><a href="/apps">Web apps</a><a href="/work">Our work</a><a href="/company">Company</a><a class="btn wa" href="https://wa.me/27724026893">WhatsApp Kabelo</a></div>
+<div class="bgo o1"></div><div class="bgo o2"></div><div id="glow"></div>
+<a class="fab" href="https://wa.me/27724026893" aria-label="Chat on WhatsApp"><svg viewBox="0 0 32 32" width="28" height="28"><path fill="#04210f" d="M16 3a13 13 0 0 0-11 19.8L3 29l6.4-2A13 13 0 1 0 16 3zm6.6 18.2c-.3.8-1.7 1.5-2.4 1.6-.6.1-1.4.1-2.3-.1-.5-.2-1.2-.4-2.1-.8-3.7-1.6-6.1-5.3-6.3-5.6-.2-.2-1.5-2-1.5-3.8s1-2.7 1.3-3.1c.3-.4.7-.5.9-.5h.7c.2 0 .5-.1.8.6l1 2.5c.1.2.1.4 0 .6l-.5.8c-.2.2-.3.4-.1.7.7 1.2 1.6 2.2 2.7 2.9.4.2.6.2.8-.1l1-1.2c.2-.3.4-.2.7-.1l2.3 1.1c.3.1.5.2.6.4.1.2.1.9-.2 1.7z"/></svg><span>Chat with Kabelo</span></a>`;
+
+export const closing = `<section style="padding-top:0"><div class="wrap"><div class="cta rv"><span class="eye">Ready when you are</span><h2>Ready for a website worth <em>the first impression?</em></h2><p class="sub">Start with a focused 30-minute conversation, no obligation. You get a proposed scope and a clear written quote.</p><div class="row"><a class="btn wa shine" href="https://wa.me/27724026893">WhatsApp 072 402 6893</a><a class="btn pri" href="tel:+27724026893">Call Kabelo</a><a class="btn" href="mailto:kabelokadiaka4@gmail.com">Email</a></div><div class="trust"><span>✓ Free prototype preview</span><span>✓ Written scope</span><span>✓ 50/50 payment</span><span>✓ Defect-fix window</span></div></div></div></section>
+<footer><div class="bigw" aria-hidden="true">CARTER DIGITALS</div><div class="wrap fg">
+<div class="fc1"><img src="/reference/wordmark.jpg" width="400" height="178" alt="Carter Digitals"><p>Digital credibility, engineered. Founder-led websites, stores and web applications for South African businesses.</p><div class="cred" style="margin:14px 0 0"><span>Level 1 B-BBEE</span><span>CSD registered</span><span>100% Black &amp; youth-owned</span></div></div>
+<div><h4>Services</h4><a href="/websites">Websites</a><a href="/stores">Online stores</a><a href="/apps">Web applications</a><a href="/company#care-plans">Care plans</a></div>
+<div><h4>Company</h4><a href="/company">About &amp; credentials</a><a href="/work">Case studies</a><a href="/#quiz">Package finder</a><a href="/">carterdigitals.co.za</a></div>
+<div><h4>Contact</h4><a href="tel:+27724026893">072 402 6893</a><a href="https://wa.me/27724026893">WhatsApp</a><a href="mailto:kabelokadiaka4@gmail.com">kabelokadiaka4@gmail.com</a><span>Soshanguve, Pretoria<br>Serving South Africa</span></div>
+</div><div class="wrap fb"><span>© 2026 Carter Digitals (Pty) Ltd · CIPC 2025/907839/07 · Prices in ZAR, suggested starting prices, not binding quotes.</span><a href="#main-content" id="top" class="btn">Back to top ↑</a></div></footer>`;

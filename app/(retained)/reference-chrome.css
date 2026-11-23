@@ -1,0 +1,120 @@
+@property --a{syntax:"<angle>";inherits:false;initial-value:0deg}
+.reference-chrome h2{font-family:"Bricolage Grotesque",Manrope,sans-serif;line-height:1.05;letter-spacing:-.025em}
+.reference-chrome a{color:inherit;text-decoration:none}
+.reference-chrome em{font-style:normal;background:linear-gradient(90deg,var(--gold),var(--blue) 60%,var(--red));-webkit-background-clip:text;background-clip:text;color:transparent}
+.reference-chrome .wrap{max-width:1180px;margin:auto;padding:0 24px}
+.reference-chrome #bar{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0;transform:scaleX(0);background:linear-gradient(90deg,var(--red),var(--gold),var(--blue));z-index:80}
+.reference-chrome .brand{display:flex;align-items:center;gap:12px;font:700 18px "Bricolage Grotesque"}
+.reference-chrome .brand img{height:40px;width:auto;border-radius:12px;box-shadow:0 0 0 1px var(--line),0 6px 20px -6px var(--blue)}
+.reference-chrome .brand small{display:block;font:400 10px Manrope;letter-spacing:.18em;color:var(--mut);text-transform:uppercase}
+.reference-chrome .links{display:flex;gap:6px;font-size:14px;color:var(--mut)}
+.reference-chrome .links a{padding:8px 14px;border-radius:99px;transition:.25s}.reference-chrome .links a:hover,.reference-chrome .links a.on{color:var(--fg);background:var(--card)}
+.reference-chrome .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 24px;border-radius:999px;font:500 15px Manrope;border:1px solid var(--line);transition:transform .25s,box-shadow .25s;cursor:pointer;background:var(--card);color:var(--fg)}
+.reference-chrome .btn:hover{transform:translateY(-2px)}
+.reference-chrome .pri{background:linear-gradient(135deg,var(--gold),#f0d58a);color:#0b1526;border-color:transparent;box-shadow:0 8px 30px -8px var(--gold)}
+.reference-chrome .wa{background:var(--wa);color:#04210f;border-color:transparent;box-shadow:0 8px 30px -8px var(--wa)}
+.reference-chrome .row{display:flex;gap:14px;flex-wrap:wrap}
+.reference-chrome .cta-p{transform-box:fill-box;transform-origin:center;animation:pulse 1.8s infinite}
+.reference-chrome section{padding:100px 0}
+.reference-chrome h2{font-size:clamp(32px,4.4vw,58px);margin-bottom:16px}
+.reference-chrome .sub{color:var(--mut);max-width:620px;margin-bottom:46px}
+.reference-chrome .cred{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px}
+.reference-chrome .cred span{padding:10px 18px;border:1px solid var(--gold);border-radius:99px;font-size:13px;letter-spacing:.06em;text-transform:uppercase;background:color-mix(in srgb,var(--gold) 10%,transparent)}
+.reference-chrome .cta{text-align:center;border:1px solid var(--line);border-radius:38px;padding:80px 24px;background:radial-gradient(640px circle at 50% 0,color-mix(in srgb,var(--blue) 40%,transparent),transparent),var(--card)}
+.reference-chrome .cta .sub{margin-inline:auto}.reference-chrome .cta .row{justify-content:center}
+.reference-chrome footer{border-top:1px solid var(--line);padding:50px 0 36px;color:var(--mut);font-size:14px}
+.reference-chrome footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;align-items:flex-start}
+.reference-chrome footer img{width:220px;border-radius:16px;display:block;margin-bottom:12px}
+.reference-chrome .rv{opacity:0;transform:translateY(46px);transition:opacity .9s,transform .9s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s)}.reference-chrome .rv.in{opacity:1;transform:none}
+.reference-chrome a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}.reference-chrome .in .typ{animation:type 1.8s steps(20) .3s forwards}.reference-chrome .in .rowr{animation:rin .6s forwards}.reference-chrome .in .ring{animation:draw 1.6s .2s ease-out forwards}.reference-chrome .in .tick{animation:draw .5s forwards}
+@keyframes up{to{opacity:1;transform:none}}@keyframes vin{from{opacity:0;transform:translateY(20px)}}
+@keyframes dash{to{stroke-dashoffset:-28}}
+@keyframes pop{0%,6%{opacity:0;transform:translateY(8px) scale(.85)}12%,80%{opacity:1;transform:none}90%,100%{opacity:0}}
+@keyframes pulse{50%{transform:scale(1.06)}}
+@keyframes toast{0%{opacity:0;transform:translateY(14px) scale(.9)}8%,45%{opacity:1;transform:none}55%,100%{opacity:0}}
+@keyframes slide{to{transform:translateX(-50%)}}@keyframes spin{to{--a:360deg}}
+@keyframes ping{70%{box-shadow:0 0 0 9px transparent}0%{box-shadow:0 0 0 0 var(--wa)}}
+@keyframes type{to{width:150px}}@keyframes rin{to{opacity:1;transform:none}}@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes ripple{0%{transform:scale(.6);opacity:.8}100%{transform:scale(2.2);opacity:0}}
+@media(max-width:960px){.reference-chrome .links{order:3;width:100%;overflow-x:auto}.reference-chrome section{padding:70px 0}}
+@media(prefers-reduced-motion:reduce){.reference-chrome .rv{opacity:1!important;transform:none!important}}
+
+.reference-chrome #nav{position:fixed;top:calc(14px + env(safe-area-inset-top,0px));left:50%;margin:0;padding:0;width:min(1060px,calc(100% - 24px));transform:translateX(-50%);transition:transform .55s cubic-bezier(.2,.8,.2,1)}
+.reference-chrome #nav.hide{transform:translate(-50%,-170%)}
+.reference-chrome #nav .np{padding:8px 8px 8px 10px;gap:10px;flex-wrap:nowrap;border-radius:999px;box-shadow:0 20px 60px -20px rgba(0,0,0,.6);transition:background .4s,border-color .4s}
+.reference-chrome #nav.sc .np{background:color-mix(in srgb,var(--bg) 88%,transparent);border-color:color-mix(in srgb,var(--gold) 40%,var(--line))}
+.reference-chrome .links{position:relative}.reference-chrome .links a{position:relative;z-index:1;background:none!important}.reference-chrome .links a.on{color:var(--fg)}
+.reference-chrome .shine{position:relative;overflow:hidden}.reference-chrome .shine:after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:shn 3.6s infinite}
+@keyframes shn{0%,60%{left:-60%}100%{left:130%}}
+.reference-chrome .burger{display:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:6px}
+.reference-chrome .burger span{width:18px;height:2px;background:var(--fg);transition:.3s}.reference-chrome .burger[aria-expanded=true] span:first-child{transform:translateY(4px) rotate(45deg)}.reference-chrome .burger[aria-expanded=true] span:last-child{transform:translateY(-4px) rotate(-45deg)}
+.reference-chrome #menu{position:fixed;inset:0;z-index:55;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(24px);display:flex;flex-direction:column;justify-content:center;gap:6px;padding:0 10vw;opacity:0;pointer-events:none;transition:opacity .4s}
+.reference-chrome #menu.on{opacity:1;pointer-events:auto}.reference-chrome #menu a:not(.btn){font:700 clamp(34px,9vw,56px) "Bricolage Grotesque";letter-spacing:-.03em;transform:translateY(24px);opacity:0;transition:.5s}.reference-chrome #menu.on a:not(.btn){transform:none;opacity:1}.reference-chrome #menu a:nth-child(2){transition-delay:.05s}.reference-chrome #menu a:nth-child(3){transition-delay:.1s}.reference-chrome #menu a:nth-child(4){transition-delay:.15s}.reference-chrome #menu a:nth-child(5){transition-delay:.2s}.reference-chrome #menu .btn{margin-top:24px;align-self:flex-start}
+.reference-chrome .bgo{position:fixed;border-radius:50%;filter:blur(110px);z-index:-1;pointer-events:none;opacity:.18}
+.reference-chrome #glow{position:fixed;left:0;top:0;width:420px;height:420px;margin:-210px 0 0 -210px;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--gold) 14%,transparent),transparent 65%);pointer-events:none;z-index:1;opacity:0;transition:opacity .4s}
+.reference-chrome .fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:58;display:flex;align-items:center;gap:0;height:58px;padding:0 15px;border-radius:99px;background:var(--wa);color:#04210f;font:500 14px Manrope;box-shadow:0 10px 36px -6px var(--wa);animation:fabp 2.6s infinite}
+.reference-chrome .fab span{max-width:0;overflow:hidden;white-space:nowrap;transition:max-width .4s,margin .4s}.reference-chrome .fab:hover span{max-width:160px;margin-left:10px}
+@keyframes fabp{70%{box-shadow:0 10px 36px -6px var(--wa),0 0 0 14px transparent}0%{box-shadow:0 10px 36px -6px var(--wa),0 0 0 0 rgba(37,211,102,.5)}}
+.reference-chrome .eye{display:inline-block;font:500 12px Manrope;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}.reference-chrome .eye:before{content:"";display:inline-block;width:28px;height:1px;background:var(--gold);vertical-align:middle;margin-right:12px}
+@keyframes flt{50%{transform:translateY(-14px)}}.reference-chrome .in .dr{animation:draw 1.6s .2s forwards}
+@keyframes rot{to{transform:rotate(360deg)}}.reference-chrome .in .lnp{animation:draw 2.2s .2s ease-out forwards}.reference-chrome .in .arA{animation:fi 1.4s 1s forwards}@keyframes fi{to{opacity:1}}.reference-chrome .in .arc{animation:arcg 1.4s .4s forwards}@keyframes arcg{to{stroke-dasharray:var(--l) 277}}
+.reference-chrome .trust{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 26px;margin-top:34px;color:var(--mut);font-size:14px}
+.reference-chrome footer{padding:0 0 30px;overflow:hidden}.reference-chrome .bigw{font:700 clamp(46px,13.5vw,200px) "Bricolage Grotesque";letter-spacing:-.04em;line-height:1;text-align:center;white-space:nowrap;color:transparent;-webkit-text-stroke:1px var(--line);background:linear-gradient(90deg,var(--red),var(--gold),var(--blue));-webkit-background-clip:text;background-clip:text;background-size:0% 100%;background-repeat:no-repeat;transition:background-size 1.6s;margin-bottom:30px}.reference-chrome .bigw.in{background-size:100% 100%;-webkit-text-stroke:0;opacity:.9}
+.reference-chrome footer .fg{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:36px}.reference-chrome footer .fg>div{display:flex;flex-direction:column;gap:10px;align-items:flex-start}.reference-chrome footer h4{font:500 12px Manrope;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}.reference-chrome footer a:hover{color:var(--fg)}.reference-chrome footer .fc1 p{max-width:320px}
+.reference-chrome footer .fb{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:44px;padding-top:24px;border-top:1px solid var(--line);font-size:13px}.reference-chrome footer .fb .btn{padding:10px 18px;font-size:13px}
+.reference-chrome footer .fg .cred span{font-size:11px;padding:7px 12px}.reference-chrome footer .fg img{width:200px}
+@media(max-width:960px){.reference-chrome .links{display:none}.reference-chrome .burger{display:flex}.reference-chrome footer .fg{grid-template-columns:1fr}.reference-chrome .fab span{display:none}}
+@media(hover:none){.reference-chrome #glow{display:none}}
+@keyframes k1{0%,71.99%{opacity:0;transform:scale(.55)}75.00%,88%{opacity:1;transform:none}95%,100%{opacity:0}}.reference-chrome .in .k1{animation:k1 10s cubic-bezier(.2,.8,.2,1) infinite}
+@keyframes k2{0%,7.99%{opacity:0;transform:translateY(-16px)}11.00%,88%{opacity:1;transform:none}95%,100%{opacity:0}}.reference-chrome .in .k2{animation:k2 10s cubic-bezier(.2,.8,.2,1) infinite}
+@keyframes k3{0%,17.99%{opacity:0;transform:scale(.55)}21.00%,88%{opacity:1;transform:none}95%,100%{opacity:0}}.reference-chrome .in .k3{animation:k3 10s cubic-bezier(.2,.8,.2,1) infinite}
+@keyframes k4{0%,23.99%{opacity:0;transform:translateX(-22px)}27.00%,88%{opacity:1;transform:none}95%,100%{opacity:0}}.reference-chrome .in .k4{animation:k4 10s cubic-bezier(.2,.8,.2,1) infinite}
+@keyframes k5{0%,29.99%{opacity:0;transform:scale(.55)}33.00%,88%{opacity:1;transform:none}95%,100%{opacity:0}}.reference-chrome .in .k5{animation:k5 10s cubic-bezier(.2,.8,.2,1) infinite}
+@keyframes k6{0%,33.99%{opacity:0;transform:scale(.55)}37.00%,88%{opacity:1;transform:none}95%,100%{opacity:0}}.reference-chrome .in .k6{animation:k6 10s cubic-bezier(.2,.8,.2,1) infinite}
+@keyframes k7{0%,37.99%{opacity:0;transform:scale(.55)}41.00%,88%{opacity:1;transform:none}95%,100%{opacity:0}}.reference-chrome .in .k7{animation:k7 10s cubic-bezier(.2,.8,.2,1) infinite}
+@keyframes k8{0%,45.99%{opacity:0;transform:translateY(16px)}49.00%,88%{opacity:1;transform:none}95%,100%{opacity:0}}.reference-chrome .in .k8{animation:k8 10s cubic-bezier(.2,.8,.2,1) infinite}
+@keyframes k9{0%,9.99%{opacity:0;transform:scale(.55)}13.00%,88%{opacity:1;transform:none}95%,100%{opacity:0}}.reference-chrome .in .k9{animation:k9 10s cubic-bezier(.2,.8,.2,1) infinite}
+@keyframes k10{0%,18.49%{opacity:0;transform:scale(.55)}21.50%,88%{opacity:1;transform:none}95%,100%{opacity:0}}.reference-chrome .in .k10{animation:k10 10s cubic-bezier(.2,.8,.2,1) infinite}
+@keyframes k11{0%,26.99%{opacity:0;transform:scale(.55)}30.00%,88%{opacity:1;transform:none}95%,100%{opacity:0}}.reference-chrome .in .k11{animation:k11 10s cubic-bezier(.2,.8,.2,1) infinite}
+@keyframes k12{0%,35.49%{opacity:0;transform:scale(.55)}38.50%,88%{opacity:1;transform:none}95%,100%{opacity:0}}.reference-chrome .in .k12{animation:k12 10s cubic-bezier(.2,.8,.2,1) infinite}
+@keyframes k13{0%,43.99%{opacity:0;transform:scale(.55)}47.00%,88%{opacity:1;transform:none}95%,100%{opacity:0}}.reference-chrome .in .k13{animation:k13 10s cubic-bezier(.2,.8,.2,1) infinite}
+@keyframes k14{0%,52.49%{opacity:0;transform:scale(.55)}55.50%,88%{opacity:1;transform:none}95%,100%{opacity:0}}.reference-chrome .in .k14{animation:k14 10s cubic-bezier(.2,.8,.2,1) infinite}
+@keyframes k15{0%,60.99%{opacity:0;transform:scale(.55)}64.00%,88%{opacity:1;transform:none}95%,100%{opacity:0}}.reference-chrome .in .k15{animation:k15 10s cubic-bezier(.2,.8,.2,1) infinite}
+@keyframes k16{0%,69.60%{opacity:1}70.00%,96%{opacity:0}100%{opacity:1}}.reference-chrome .in .k16{animation:k16 10s linear infinite}
+@keyframes k17{0%,71.99%{opacity:0;transform:scale(.55)}75.00%,88%{opacity:1;transform:none}95%,100%{opacity:0}}.reference-chrome .in .k17{animation:k17 10s cubic-bezier(.2,.8,.2,1) infinite}
+@keyframes k18{0%,4.99%{opacity:0;transform:scale(.55)}8.00%,88%{opacity:1;transform:none}95%,100%{opacity:0}}.reference-chrome .in .k18{animation:k18 10s cubic-bezier(.2,.8,.2,1) infinite}
+@keyframes k19{0%,21.79%{opacity:0;transform:scale(.55)}24.80%,88%{opacity:1;transform:none}95%,100%{opacity:0}}.reference-chrome .in .k19{animation:k19 10s cubic-bezier(.2,.8,.2,1) infinite}
+@keyframes k20{0%,38.59%{opacity:0;transform:scale(.55)}41.60%,88%{opacity:1;transform:none}95%,100%{opacity:0}}.reference-chrome .in .k20{animation:k20 10s cubic-bezier(.2,.8,.2,1) infinite}
+@keyframes k21{0%,55.39%{opacity:0;transform:scale(.55)}58.40%,88%{opacity:1;transform:none}95%,100%{opacity:0}}.reference-chrome .in .k21{animation:k21 10s cubic-bezier(.2,.8,.2,1) infinite}
+@keyframes k22{0%,72.19%{opacity:0;transform:scale(.55)}75.20%,88%{opacity:1;transform:none}95%,100%{opacity:0}}.reference-chrome .in .k22{animation:k22 10s cubic-bezier(.2,.8,.2,1) infinite}.reference-chrome .in .pgf{animation:pgx 10s linear infinite}@keyframes pgx{0%,3%{width:0}72%,90%{width:580px}96%,100%{width:0}}.reference-chrome .in .cfi{animation:cf 10s ease-out infinite}@keyframes cf{0%,71%{opacity:0;transform:translate(0,0) scale(.4)}72%{opacity:1}90%{opacity:0;transform:translate(var(--dx),var(--dy)) rotate(300deg) scale(1)}100%{opacity:0}}@keyframes swp{0%{transform:translateX(0)}60%,100%{transform:translateX(330px)}}@keyframes tw{0%,100%{opacity:.15;transform:translate(var(--x,0),var(--y,0)) scale(.5)}50%{opacity:1}}
+.reference-chrome h2{font-family:"Bricolage Grotesque",Manrope,sans-serif;font-optical-sizing:auto;font-weight:700}
+.reference-chrome h2{letter-spacing:-.038em;line-height:1.02;font-size:clamp(34px,4.8vw,64px)}
+.reference-chrome em{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-weight:400;letter-spacing:-.015em;font-size:1.14em;line-height:.9;padding-right:.04em}
+.reference-chrome .eye{font-family:Manrope;font-weight:700;letter-spacing:.26em;font-size:11.5px}
+.reference-chrome .sub{font-size:clamp(17px,1.45vw,20px);line-height:1.68;font-weight:400}
+.reference-chrome .btn{font-weight:600;letter-spacing:.005em}
+@keyframes fin{from{opacity:0;transform:translateY(-10px)}}.reference-chrome .btn:active{transform:scale(.97)!important}
+.reference-chrome footer .fg a{position:relative;width:fit-content}.reference-chrome footer .fg a:after{content:"";position:absolute;left:0;bottom:-2px;height:1px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .35s}.reference-chrome footer .fg a:hover:after{transform:scaleX(1)}.reference-chrome .in .fl{animation:draw 5s ease-out forwards}
+@keyframes grow{from{transform:scaleY(0)}}.reference-chrome .in .stp-r{animation:grow .9s cubic-bezier(.2,.8,.2,1) both}
+
+/* Production navigation, progressive enhancement and motion fallbacks. */
+.reference-chrome #menu[inert] {visibility:hidden}
+.reference-chrome #menu {overflow:auto;overscroll-behavior:contain}
+.reference-chrome #nav:focus-within {transform:none}
+.reference-chrome .reference-links a {color:var(--fg)}
+.reference-chrome .reference-links {display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:28px;font-size:13px}
+.reference-chrome .reference-links a {text-decoration:underline;text-underline-offset:3px}
+.reference-chrome .reference-links details {flex-basis:100%}
+.reference-chrome .reference-links details a {display:inline-block;margin:8px 18px 0 0}
+@media(prefers-reduced-motion:reduce) {
+  .reference-chrome #glow {display:none}
+}
+
+.reference-chrome {display:contents}
+.reference-chrome .reference-closing > div {display:contents}
+.reference-chrome .reference-links {padding-bottom:30px}
+.reference-chrome .reference-links summary {width:fit-content;cursor:pointer}
+@media(max-width:600px) {
+  .reference-chrome #menu {padding-block:64px 32px}
+  .reference-chrome .reference-links {padding-bottom:90px}
+}

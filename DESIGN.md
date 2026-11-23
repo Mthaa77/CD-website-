@@ -43,3 +43,9 @@ The composition uses four material states:
 - No identical card grids with equal visual weight
 - No constant floating on every section
 - No motion that delays contact or obscures pricing
+
+## Reference Website
+
+The approved six-screen reference defines the public marketing experience. Its black-blue canvas, gold action colour, crimson-to-cobalt gradients and light appearance live in `app/_components/reference/reference.css`. Bricolage Grotesque leads, Manrope handles body and controls, and Instrument Serif supplies italic emphasis. The retained routes share the typography and navigation through the reference theme adapter in `app/(retained)`.
+
+Use the reference illustrations and browser mockups to make interactions legible. Reserve looping motion for illustrations, keep content readable before the script runs, and pause animation out of view. The package finder and investment planner are estimates. The inbox and dashboards show sample data.

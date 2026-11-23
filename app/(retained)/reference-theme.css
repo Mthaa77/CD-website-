@@ -1,0 +1,97 @@
+/* Connect the retained landing pages to the reference identity. */
+body.reference-retained {
+  --carter-heading: "Bricolage Grotesque", Manrope, sans-serif;
+  --carter-body: Manrope, system-ui, sans-serif;
+  --font-editorial: "Instrument Serif", Georgia, serif;
+  --font-geist-sans: Manrope, system-ui, sans-serif;
+  --ref-gold: #d4b25a;
+  --ref-gold-light: #f0d58a;
+  --ref-blue: #2fa8ff;
+  --ref-red: #e03348;
+  --ref-bg: #03070d;
+  --ref-bg2: #08162e;
+  --ref-fg: #f3f5f8;
+  --ref-muted: #9aa8bd;
+  --ref-line: rgb(255 255 255 / 12%);
+  --ref-card: rgb(255 255 255 / 4.5%);
+  --carter-accent: #a72a3d;
+  font-family: var(--carter-body);
+  background: #f4f6fa;
+}
+
+@media (prefers-color-scheme: light) {
+  body.reference-retained {
+    --ref-gold: #8f6f14;
+    --ref-blue: #0a6fc2;
+    --ref-bg: #f4f6fa;
+    --ref-bg2: #e8eef8;
+    --ref-fg: #0b1526;
+    --ref-muted: #4d5b70;
+    --ref-line: rgb(11 21 38 / 14%);
+    --ref-card: rgb(11 21 38 / 4.5%);
+  }
+}
+
+.reference-chrome {
+  --bg: var(--ref-bg);
+  --bg2: var(--ref-bg2);
+  --fg: var(--ref-fg);
+  --mut: var(--ref-muted);
+  --gold: var(--ref-gold);
+  --blue: var(--ref-blue);
+  --red: var(--ref-red);
+  --line: var(--ref-line);
+  --card: var(--ref-card);
+  --wa: #25d366;
+  display: contents;
+  font: 400 17px/1.65 Manrope, system-ui, sans-serif;
+  color: var(--fg);
+}
+
+.reference-closing {
+  display: block;
+  padding-top: clamp(2.5rem, 6vw, 5rem);
+  background: var(--bg);
+}
+.reference-chrome :is(#nav, #menu, .fab, .cta) a {color: inherit;text-decoration: none}
+.reference-chrome :is(#nav, .cta) .pri {color: #0b1526}
+.reference-chrome .btn.wa {color: #04210f}
+.reference-chrome footer h4 {font-weight: 700}
+.reference-chrome footer img {height: auto}
+.reference-chrome .reference-links {margin-top: 0;padding-top: 16px}
+.reference-chrome .reference-links details {width:100%}
+.reference-chrome .bgo {display:none}
+.reference-chrome .bigw {opacity:1;transform:none}
+.reference-chrome #nav:focus-within {transform:translateX(-50%)}
+.reference-chrome #menu[inert] {visibility:hidden}
+.reference-chrome #menu {overflow:auto;overscroll-behavior:contain}
+.reference-chrome .rv {opacity:1;transform:none}
+.reference-chrome .cta {margin-bottom:clamp(2.5rem, 6vw, 5rem)}
+.reference-chrome .cta h2 {font-family:var(--carter-heading);font-weight:700;line-height:1.05;letter-spacing:-.035em}
+.reference-retained .site-page :is(.cd-cinematic-nav,.bubble-menu,.carter-footer,.cd-whatsapp-float,.about-footer,.privacy-footer,.service-v2-footer,.insights-footer,.insights-story-footer) {display:none}
+.reference-retained .site-page {overflow:clip}
+.reference-retained .site-page .cd-site {background:#f4f6fa;color:#0b1526}
+.reference-retained .site-page .cd-inner-new {background:var(--ref-bg);color:var(--ref-fg)}
+.reference-retained .site-page .cd-inner-new .cd-inner-hero :is(h1,p) {color:#f3f5f8}
+.reference-retained .site-page .cd-inner-new {--fg:var(--ref-fg);--mut:var(--ref-muted);--bg:var(--ref-bg);--bg2:var(--ref-bg2);--card:var(--ref-card);--line:var(--ref-line);--gold:var(--ref-gold);--blue:var(--ref-blue)}
+.reference-chrome #nav .np {
+  display:flex;align-items:center;justify-content:space-between;
+  border:1px solid var(--line);
+  background:color-mix(in srgb,var(--bg) 72%,transparent);
+  backdrop-filter:blur(18px);
+}
+.reference-chrome #nav {z-index:60}
+.reference-chrome #nav a {text-decoration:none}
+@media (max-width:600px){
+  .reference-chrome #nav .brand {gap:8px;font-size:15px;white-space:nowrap}
+  .reference-chrome #nav .brand small {font-size:8px;letter-spacing:.1em}
+  .reference-chrome #nav .nct {padding-inline:12px;font-size:12px;white-space:nowrap}
+  .reference-chrome #nav .burger {flex:0 0 44px}
+}
+.reference-retained .site-page :is(h1,h2) {font-family: var(--carter-heading)}
+.reference-retained .site-page :is(h1,h2) em {font-family: var(--font-editorial),Georgia,serif}
+.reference-retained .site-page :is(.cd-tile,.cd-options a,.cd-section-new input,.cd-section-new select,.cd-section-new textarea) {border-radius:22px}
+.reference-retained .site-page :is(.cd-tile,.cd-service-index article) {box-shadow:0 20px 48px rgb(8 22 46 / 9%)}
+.reference-retained .site-page .cd-site {--wine:#9c2338}
+.reference-retained .site-page .cd-text {color:#125f9c}
+.reference-retained .site-page .cd-section-new form {accent-color:#0a6fc2}

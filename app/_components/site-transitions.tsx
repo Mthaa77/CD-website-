@@ -7,7 +7,7 @@ import { CarterAnalytics } from "../../components/carter-analytics";
 import { measure } from "../_lib/measurement";
 
 // Native Link navigation remains available immediately; no blocking intro curtain.
-export default function SiteTransitions({ children }: { children: ReactNode }) {
+export function SiteMeasurement() {
   const pathname = usePathname();
   useEffect(() => {
     measure("page_view", pathname);
@@ -31,5 +31,9 @@ export default function SiteTransitions({ children }: { children: ReactNode }) {
       document.removeEventListener("focusin", onFormFocus);
     };
   }, [pathname]);
-  return <div id="main-content" className="site-page" tabIndex={-1}><CarterAnalytics/><RouteMotion>{children}</RouteMotion></div>;
+  return <CarterAnalytics />;
+}
+
+export default function SiteTransitions({ children }: { children: ReactNode }) {
+  return <div id="main-content" className="site-page" tabIndex={-1}><SiteMeasurement /><RouteMotion>{children}</RouteMotion></div>;
 }

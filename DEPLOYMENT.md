@@ -38,3 +38,10 @@ New pages are `/websites`, `/stores`, `/apps` and `/company`.
 - `components/carter-quote.tsx` is the quote form. `app/api/leads/route.ts` validates, saves and dispatches lead notifications.
 - `lib/data.ts` contains package, industry, credentials and project data.
 - `public/` contains the approved brand images, public pricing document and AI discovery file.
+
+## Reference redesign rollout
+
+- Use the Vercel Preview environment to review the six redesigned pages and the retained routes. The live origin is the Carter Digitals Sites deployment.
+- Export Search Console's 28- and 90-day Performance data by page and query before promotion. Record the current Sites production version for rollback.
+- Compare the candidate against the production XML sitemap and verify a successful response, matching page title and self-canonical for every URL. Preserve the existing robots directives, Google and IndexNow verification files, and contact endpoints.
+- Promote the reviewed build on the existing Sites custom domain. Verify robots and the sitemap on production, inspect priority URLs in Search Console, and compare indexing and organic performance after the release.
