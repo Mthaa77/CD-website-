@@ -189,11 +189,20 @@
   };
   const view = document.querySelector("[data-reference-view]")?.dataset
     .referenceView;
-  const legacyHash = location.pathname === "/" && location.hash.slice(1);
-  if (legacyHash && Object.hasOwn(views, legacyHash) && legacyHash !== "home") {
-    location.replace(views[legacyHash]);
-    return;
+  function followLegacyFragment() {
+    const hash = location.hash.slice(1);
+    if (
+      location.pathname !== "/" ||
+      hash === "home" ||
+      !Object.hasOwn(views, hash)
+    ) {
+      return false;
+    }
+    location.replace(views[hash]);
+    return true;
   }
+  if (followLegacyFragment()) return;
+  window.addEventListener("hashchange", followLegacyFragment);
   const tr = document.getElementById("trail");
   const L = tr?.getTotalLength() || 0;
   const nodes = $(".node"),
